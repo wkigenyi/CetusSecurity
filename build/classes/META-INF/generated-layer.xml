@@ -1,0 +1,640 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE filesystem PUBLIC "-//NetBeans//DTD Filesystem 1.2//EN"
+                            "http://www.netbeans.org/dtds/filesystem-1_2.dtd">
+<filesystem>
+    <folder name="Actions">
+        <folder name="File">
+            <file name="systems-tech247-menus-SwitchApp.instance">
+                <!--systems.tech247.menus.SwitchApp-->
+                <attr
+                    bundlevalue="systems.tech247.menus.Bundle#CTL_SwitchApp" name="displayName"/>
+                <attr
+                    methodvalue="org.openide.awt.Actions.alwaysEnabled" name="instanceCreate"/>
+                <attr name="delegate" newvalue="systems.tech247.menus.SwitchApp"/>
+                <attr name="iconBase" stringvalue="systems/tech247/menus/changeapp.png"/>
+                <attr boolvalue="false" name="noIconInMenu"/>
+            </file>
+        </folder>
+        <folder name="Window">
+            <file name="systems-tech247-menus-AppLaunchTopComponent.instance">
+                <!--systems.tech247.menus.AppLaunchTopComponent-->
+                <attr
+                    methodvalue="org.openide.windows.TopComponent.openAction" name="instanceCreate"/>
+                <attr name="component" newvalue="systems.tech247.menus.AppLaunchTopComponent"/>
+                <attr name="preferredID" stringvalue="AppLaunchTopComponent"/>
+                <attr
+                    bundlevalue="systems.tech247.menus.Bundle#CTL_AppLaunchAction" name="displayName"/>
+            </file>
+            <file name="systems-tech247-menus-AppMenuTopComponent.instance">
+                <!--systems.tech247.menus.AppMenuTopComponent-->
+                <attr
+                    methodvalue="org.openide.windows.TopComponent.openAction" name="instanceCreate"/>
+                <attr name="component" newvalue="systems.tech247.menus.AppMenuTopComponent"/>
+                <attr name="preferredID" stringvalue="AppMenuTopComponent"/>
+                <attr
+                    bundlevalue="systems.tech247.menus.Bundle#CTL_AppMenuAction" name="displayName"/>
+            </file>
+            <file name="systems-tech247-viewer-AppModulesTopComponent.instance">
+                <!--systems.tech247.menus.AppModulesTopComponent-->
+                <attr
+                    methodvalue="org.openide.windows.TopComponent.openAction" name="instanceCreate"/>
+                <attr name="component" newvalue="systems.tech247.menus.AppModulesTopComponent"/>
+                <attr name="preferredID" stringvalue="AppModulesTopComponent"/>
+                <attr
+                    bundlevalue="systems.tech247.menus.Bundle#CTL_AppModulesAction" name="displayName"/>
+            </file>
+            <file name="systems-tech247-security-SecurityOptionsTopComponent.instance">
+                <!--systems.tech247.menus.SecurityOptionsTopComponent-->
+                <attr
+                    methodvalue="org.openide.windows.TopComponent.openAction" name="instanceCreate"/>
+                <attr name="component" newvalue="systems.tech247.menus.SecurityOptionsTopComponent"/>
+                <attr name="preferredID" stringvalue="SecurityOptionsTopComponent"/>
+                <attr
+                    bundlevalue="systems.tech247.menus.Bundle#CTL_SecurityOptionsAction" name="displayName"/>
+            </file>
+            <file name="systems-tech247-security-RolesTopComponent.instance">
+                <!--systems.tech247.security.RolesTopComponent-->
+                <attr
+                    methodvalue="org.openide.windows.TopComponent.openAction" name="instanceCreate"/>
+                <attr name="component" newvalue="systems.tech247.security.RolesTopComponent"/>
+                <attr name="preferredID" stringvalue="RolesTopComponent"/>
+                <attr
+                    bundlevalue="systems.tech247.security.Bundle#CTL_RolesAction" name="displayName"/>
+            </file>
+            <file name="systems-tech247-security-SecuritySetupTopComponent.instance">
+                <!--systems.tech247.security.SecuritySetupTopComponent-->
+                <attr
+                    methodvalue="org.openide.windows.TopComponent.openAction" name="instanceCreate"/>
+                <attr name="component" newvalue="systems.tech247.security.SecuritySetupTopComponent"/>
+                <attr name="preferredID" stringvalue="SecuritySetupTopComponent"/>
+                <attr
+                    bundlevalue="systems.tech247.security.Bundle#CTL_SecuritySetupAction" name="displayName"/>
+            </file>
+            <file name="systems-tech247-security-UsersTopComponent.instance">
+                <!--systems.tech247.security.UsersTopComponent-->
+                <attr
+                    methodvalue="org.openide.windows.TopComponent.openAction" name="instanceCreate"/>
+                <attr name="component" newvalue="systems.tech247.security.UsersTopComponent"/>
+                <attr name="preferredID" stringvalue="UsersTopComponent"/>
+                <attr
+                    bundlevalue="systems.tech247.security.Bundle#CTL_UsersAction" name="displayName"/>
+            </file>
+            <file name="systems-tech247-security-GroupEditorTopComponent.instance">
+                <!--systems.tech247.securitypannels.GroupEditorTopComponent-->
+                <!--systems.tech247.securitypannels.PolicyEditorTopComponent-->
+                <attr
+                    methodvalue="org.openide.windows.TopComponent.openAction" name="instanceCreate"/>
+                <attr name="component" newvalue="systems.tech247.securitypannels.PolicyEditorTopComponent"/>
+                <attr name="preferredID" stringvalue="PolicyEditorTopComponent"/>
+                <attr
+                    bundlevalue="systems.tech247.securitypannels.Bundle#CTL_PolicyEditorAction" name="displayName"/>
+            </file>
+            <file name="systems-tech247-security-PolicyEditorTopComponent.instance">
+                <!--systems.tech247.securitypannels.PolicyCategoryEditorTopComponent-->
+                <attr
+                    methodvalue="org.openide.windows.TopComponent.openAction" name="instanceCreate"/>
+                <attr name="component" newvalue="systems.tech247.securitypannels.PolicyCategoryEditorTopComponent"/>
+                <attr name="preferredID" stringvalue="PolicyCategoryEditorTopComponent"/>
+                <attr
+                    bundlevalue="systems.tech247.securitypannels.Bundle#CTL_PolicyCategoryEditorAction" name="displayName"/>
+            </file>
+            <file name="systems-tech247-securitypannels-UserEditorTopComponent.instance">
+                <!--systems.tech247.securitypannels.UserEditorTopComponent-->
+                <attr
+                    methodvalue="org.openide.windows.TopComponent.openAction" name="instanceCreate"/>
+                <attr name="component" newvalue="systems.tech247.securitypannels.UserEditorTopComponent"/>
+                <attr name="preferredID" stringvalue="UserEditorTopComponent"/>
+                <attr
+                    bundlevalue="systems.tech247.securitypannels.Bundle#CTL_UserEditorAction" name="displayName"/>
+            </file>
+        </folder>
+    </folder>
+    <folder name="Menu">
+        <folder name="File">
+            <file name="systems-tech247-menus-SwitchApp.shadow">
+                <!--systems.tech247.menus.SwitchApp-->
+                <attr name="originalFile" stringvalue="Actions/File/systems-tech247-menus-SwitchApp.instance"/>
+                <attr intvalue="0" name="position"/>
+            </file>
+        </folder>
+        <folder name="Window">
+            <file name="systems-tech247-menus-AppLaunchTopComponent.shadow">
+                <!--systems.tech247.menus.AppLaunchTopComponent-->
+                <attr name="originalFile" stringvalue="Actions/Window/systems-tech247-menus-AppLaunchTopComponent.instance"/>
+            </file>
+            <file name="systems-tech247-menus-AppMenuTopComponent.shadow">
+                <!--systems.tech247.menus.AppMenuTopComponent-->
+                <attr name="originalFile" stringvalue="Actions/Window/systems-tech247-menus-AppMenuTopComponent.instance"/>
+            </file>
+            <file name="systems-tech247-security-SecurityOptionsTopComponent.shadow">
+                <!--systems.tech247.menus.SecurityOptionsTopComponent-->
+                <attr name="originalFile" stringvalue="Actions/Window/systems-tech247-security-SecurityOptionsTopComponent.instance"/>
+            </file>
+            <file name="systems-tech247-security-SecuritySetupTopComponent.shadow">
+                <!--systems.tech247.security.SecuritySetupTopComponent-->
+                <attr name="originalFile" stringvalue="Actions/Window/systems-tech247-security-SecuritySetupTopComponent.instance"/>
+            </file>
+            <file name="systems-tech247-security-GroupEditorTopComponent.shadow">
+                <!--systems.tech247.securitypannels.GroupEditorTopComponent-->
+                <!--systems.tech247.securitypannels.PolicyEditorTopComponent-->
+                <attr name="originalFile" stringvalue="Actions/Window/systems-tech247-security-GroupEditorTopComponent.instance"/>
+            </file>
+            <file name="systems-tech247-security-PolicyEditorTopComponent.shadow">
+                <!--systems.tech247.securitypannels.PolicyCategoryEditorTopComponent-->
+                <attr name="originalFile" stringvalue="Actions/Window/systems-tech247-security-PolicyEditorTopComponent.instance"/>
+            </file>
+            <file name="systems-tech247-securitypannels-UserEditorTopComponent.shadow">
+                <!--systems.tech247.securitypannels.UserEditorTopComponent-->
+                <attr name="originalFile" stringvalue="Actions/Window/systems-tech247-securitypannels-UserEditorTopComponent.instance"/>
+            </file>
+        </folder>
+        <folder name="System">
+            <file name="systems-tech247-viewer-AppModulesTopComponent.shadow">
+                <!--systems.tech247.menus.AppModulesTopComponent-->
+                <attr name="originalFile" stringvalue="Actions/Window/systems-tech247-viewer-AppModulesTopComponent.instance"/>
+                <attr intvalue="300" name="position"/>
+            </file>
+            <file name="systems-tech247-security-RolesTopComponent.shadow">
+                <!--systems.tech247.security.RolesTopComponent-->
+                <attr name="originalFile" stringvalue="Actions/Window/systems-tech247-security-RolesTopComponent.instance"/>
+                <attr intvalue="250" name="position"/>
+            </file>
+            <file name="systems-tech247-security-RolesTopComponent-separatorAfter.instance">
+                <!--systems.tech247.security.RolesTopComponent-->
+                <attr name="instanceCreate" newvalue="javax.swing.JSeparator"/>
+                <attr intvalue="251" name="position"/>
+            </file>
+            <file name="systems-tech247-security-UsersTopComponent.shadow">
+                <!--systems.tech247.security.UsersTopComponent-->
+                <attr name="originalFile" stringvalue="Actions/Window/systems-tech247-security-UsersTopComponent.instance"/>
+                <attr intvalue="250" name="position"/>
+            </file>
+            <file name="systems-tech247-security-UsersTopComponent-separatorAfter.instance">
+                <!--systems.tech247.security.UsersTopComponent-->
+                <attr name="instanceCreate" newvalue="javax.swing.JSeparator"/>
+                <attr intvalue="251" name="position"/>
+            </file>
+        </folder>
+    </folder>
+    <folder name="Toolbars">
+        <folder name="File">
+            <file name="systems-tech247-menus-SwitchApp.shadow">
+                <!--systems.tech247.menus.SwitchApp-->
+                <attr name="originalFile" stringvalue="Actions/File/systems-tech247-menus-SwitchApp.instance"/>
+                <attr intvalue="0" name="position"/>
+            </file>
+        </folder>
+    </folder>
+    <folder name="xml">
+        <folder name="entities">
+            <folder name="systems_tech247_menus">
+                <file name="AppLaunch" url="nbres:/org/netbeans/modules/settings/resources/properties-1_0.dtd">
+                    <!--systems.tech247.menus.AppLaunchTopComponent-->
+                    <attr name="hint.originalPublicID" stringvalue="-//systems.tech247.menus//AppLaunch//EN"/>
+                </file>
+                <file name="AppMenu" url="nbres:/org/netbeans/modules/settings/resources/properties-1_0.dtd">
+                    <!--systems.tech247.menus.AppMenuTopComponent-->
+                    <attr name="hint.originalPublicID" stringvalue="-//systems.tech247.menus//AppMenu//EN"/>
+                </file>
+            </folder>
+            <folder name="systems_tech247_viewer">
+                <file name="AppModules" url="nbres:/org/netbeans/modules/settings/resources/properties-1_0.dtd">
+                    <!--systems.tech247.menus.AppModulesTopComponent-->
+                    <attr name="hint.originalPublicID" stringvalue="-//systems.tech247.viewer//AppModules//EN"/>
+                </file>
+            </folder>
+            <folder name="systems_tech247_security">
+                <file name="SecurityOptions" url="nbres:/org/netbeans/modules/settings/resources/properties-1_0.dtd">
+                    <!--systems.tech247.menus.SecurityOptionsTopComponent-->
+                    <attr name="hint.originalPublicID" stringvalue="-//systems.tech247.security//SecurityOptions//EN"/>
+                </file>
+                <file name="Roles" url="nbres:/org/netbeans/modules/settings/resources/properties-1_0.dtd">
+                    <!--systems.tech247.security.RolesTopComponent-->
+                    <attr name="hint.originalPublicID" stringvalue="-//systems.tech247.security//Roles//EN"/>
+                </file>
+                <file name="SecuritySetup" url="nbres:/org/netbeans/modules/settings/resources/properties-1_0.dtd">
+                    <!--systems.tech247.security.SecuritySetupTopComponent-->
+                    <attr name="hint.originalPublicID" stringvalue="-//systems.tech247.security//SecuritySetup//EN"/>
+                </file>
+                <file name="Security" url="nbres:/org/netbeans/modules/settings/resources/properties-1_0.dtd">
+                    <!--systems.tech247.security.SecurityTopComponent-->
+                    <attr name="hint.originalPublicID" stringvalue="-//systems.tech247.security//Security//EN"/>
+                </file>
+                <file name="Users" url="nbres:/org/netbeans/modules/settings/resources/properties-1_0.dtd">
+                    <!--systems.tech247.security.UsersTopComponent-->
+                    <attr name="hint.originalPublicID" stringvalue="-//systems.tech247.security//Users//EN"/>
+                </file>
+                <file name="GroupEditor" url="nbres:/org/netbeans/modules/settings/resources/properties-1_0.dtd">
+                    <!--systems.tech247.securitypannels.GroupEditorTopComponent-->
+                    <attr name="hint.originalPublicID" stringvalue="-//systems.tech247.security//GroupEditor//EN"/>
+                </file>
+                <file name="PolicyCategoryEditor" url="nbres:/org/netbeans/modules/settings/resources/properties-1_0.dtd">
+                    <!--systems.tech247.securitypannels.PolicyCategoryEditorTopComponent-->
+                    <attr name="hint.originalPublicID" stringvalue="-//systems.tech247.security//PolicyCategoryEditor//EN"/>
+                </file>
+                <file name="PolicyEditor" url="nbres:/org/netbeans/modules/settings/resources/properties-1_0.dtd">
+                    <!--systems.tech247.securitypannels.PolicyEditorTopComponent-->
+                    <attr name="hint.originalPublicID" stringvalue="-//systems.tech247.security//PolicyEditor//EN"/>
+                </file>
+            </folder>
+            <folder name="systems_tech247_securitypannels">
+                <file name="UserEditor" url="nbres:/org/netbeans/modules/settings/resources/properties-1_0.dtd">
+                    <!--systems.tech247.securitypannels.UserEditorTopComponent-->
+                    <attr name="hint.originalPublicID" stringvalue="-//systems.tech247.securitypannels//UserEditor//EN"/>
+                </file>
+            </folder>
+        </folder>
+        <folder name="memory">
+            <folder name="systems">
+                <folder name="tech247">
+                    <folder name="menus">
+                        <file name="AppLaunchTopComponent">
+                            <!--systems.tech247.menus.AppLaunchTopComponent-->
+                            <attr name="settings.providerPath" stringvalue="xml/lookups//systems_tech247_menus/AppLaunch.instance"/>
+                        </file>
+                        <file name="AppMenuTopComponent">
+                            <!--systems.tech247.menus.AppMenuTopComponent-->
+                            <attr name="settings.providerPath" stringvalue="xml/lookups//systems_tech247_menus/AppMenu.instance"/>
+                        </file>
+                        <file name="AppModulesTopComponent">
+                            <!--systems.tech247.menus.AppModulesTopComponent-->
+                            <attr name="settings.providerPath" stringvalue="xml/lookups//systems_tech247_viewer/AppModules.instance"/>
+                        </file>
+                        <file name="SecurityOptionsTopComponent">
+                            <!--systems.tech247.menus.SecurityOptionsTopComponent-->
+                            <attr name="settings.providerPath" stringvalue="xml/lookups//systems_tech247_security/SecurityOptions.instance"/>
+                        </file>
+                    </folder>
+                    <folder name="security">
+                        <file name="RolesTopComponent">
+                            <!--systems.tech247.security.RolesTopComponent-->
+                            <attr name="settings.providerPath" stringvalue="xml/lookups//systems_tech247_security/Roles.instance"/>
+                        </file>
+                        <file name="SecuritySetupTopComponent">
+                            <!--systems.tech247.security.SecuritySetupTopComponent-->
+                            <attr name="settings.providerPath" stringvalue="xml/lookups//systems_tech247_security/SecuritySetup.instance"/>
+                        </file>
+                        <file name="SecurityTopComponent">
+                            <!--systems.tech247.security.SecurityTopComponent-->
+                            <attr name="settings.providerPath" stringvalue="xml/lookups//systems_tech247_security/Security.instance"/>
+                        </file>
+                        <file name="UsersTopComponent">
+                            <!--systems.tech247.security.UsersTopComponent-->
+                            <attr name="settings.providerPath" stringvalue="xml/lookups//systems_tech247_security/Users.instance"/>
+                        </file>
+                    </folder>
+                    <folder name="securitypannels">
+                        <file name="GroupEditorTopComponent">
+                            <!--systems.tech247.securitypannels.GroupEditorTopComponent-->
+                            <attr name="settings.providerPath" stringvalue="xml/lookups//systems_tech247_security/GroupEditor.instance"/>
+                        </file>
+                        <file name="PolicyCategoryEditorTopComponent">
+                            <!--systems.tech247.securitypannels.PolicyCategoryEditorTopComponent-->
+                            <attr name="settings.providerPath" stringvalue="xml/lookups//systems_tech247_security/PolicyCategoryEditor.instance"/>
+                        </file>
+                        <file name="PolicyEditorTopComponent">
+                            <!--systems.tech247.securitypannels.PolicyEditorTopComponent-->
+                            <attr name="settings.providerPath" stringvalue="xml/lookups//systems_tech247_security/PolicyEditor.instance"/>
+                        </file>
+                        <file name="UserEditorTopComponent">
+                            <!--systems.tech247.securitypannels.UserEditorTopComponent-->
+                            <attr name="settings.providerPath" stringvalue="xml/lookups//systems_tech247_securitypannels/UserEditor.instance"/>
+                        </file>
+                    </folder>
+                </folder>
+            </folder>
+        </folder>
+        <folder name="lookups">
+            <folder name="systems_tech247_menus">
+                <file name="AppLaunch.instance">
+                    <!--systems.tech247.menus.AppLaunchTopComponent-->
+                    <attr
+                        methodvalue="org.netbeans.api.settings.Factory.create" name="instanceCreate"/>
+                    <attr
+                        methodvalue="org.netbeans.api.settings.Factory.properties" name="settings.convertor"/>
+                    <attr name="settings.instanceClass" stringvalue="systems.tech247.menus.AppLaunchTopComponent"/>
+                    <attr name="settings.instanceOf" stringvalue="systems.tech247.menus.AppLaunchTopComponent"/>
+                    <attr boolvalue="true" name="xmlproperties.preventStoring"/>
+                </file>
+                <file name="AppMenu.instance">
+                    <!--systems.tech247.menus.AppMenuTopComponent-->
+                    <attr
+                        methodvalue="org.netbeans.api.settings.Factory.create" name="instanceCreate"/>
+                    <attr
+                        methodvalue="org.netbeans.api.settings.Factory.properties" name="settings.convertor"/>
+                    <attr name="settings.instanceClass" stringvalue="systems.tech247.menus.AppMenuTopComponent"/>
+                    <attr name="settings.instanceOf" stringvalue="systems.tech247.menus.AppMenuTopComponent"/>
+                    <attr boolvalue="true" name="xmlproperties.preventStoring"/>
+                </file>
+            </folder>
+            <folder name="systems_tech247_viewer">
+                <file name="AppModules.instance">
+                    <!--systems.tech247.menus.AppModulesTopComponent-->
+                    <attr
+                        methodvalue="org.netbeans.api.settings.Factory.create" name="instanceCreate"/>
+                    <attr
+                        methodvalue="org.netbeans.api.settings.Factory.properties" name="settings.convertor"/>
+                    <attr name="settings.instanceClass" stringvalue="systems.tech247.menus.AppModulesTopComponent"/>
+                    <attr name="settings.instanceOf" stringvalue="systems.tech247.menus.AppModulesTopComponent"/>
+                    <attr boolvalue="true" name="xmlproperties.preventStoring"/>
+                </file>
+            </folder>
+            <folder name="systems_tech247_security">
+                <file name="SecurityOptions.instance">
+                    <!--systems.tech247.menus.SecurityOptionsTopComponent-->
+                    <attr
+                        methodvalue="org.netbeans.api.settings.Factory.create" name="instanceCreate"/>
+                    <attr
+                        methodvalue="org.netbeans.api.settings.Factory.properties" name="settings.convertor"/>
+                    <attr name="settings.instanceClass" stringvalue="systems.tech247.menus.SecurityOptionsTopComponent"/>
+                    <attr name="settings.instanceOf" stringvalue="systems.tech247.menus.SecurityOptionsTopComponent"/>
+                    <attr boolvalue="true" name="xmlproperties.preventStoring"/>
+                </file>
+                <file name="Roles.instance">
+                    <!--systems.tech247.security.RolesTopComponent-->
+                    <attr
+                        methodvalue="org.netbeans.api.settings.Factory.create" name="instanceCreate"/>
+                    <attr
+                        methodvalue="org.netbeans.api.settings.Factory.properties" name="settings.convertor"/>
+                    <attr name="settings.instanceClass" stringvalue="systems.tech247.security.RolesTopComponent"/>
+                    <attr name="settings.instanceOf" stringvalue="systems.tech247.security.RolesTopComponent"/>
+                    <attr boolvalue="true" name="xmlproperties.preventStoring"/>
+                </file>
+                <file name="SecuritySetup.instance">
+                    <!--systems.tech247.security.SecuritySetupTopComponent-->
+                    <attr
+                        methodvalue="org.netbeans.api.settings.Factory.create" name="instanceCreate"/>
+                    <attr
+                        methodvalue="org.netbeans.api.settings.Factory.properties" name="settings.convertor"/>
+                    <attr name="settings.instanceClass" stringvalue="systems.tech247.security.SecuritySetupTopComponent"/>
+                    <attr name="settings.instanceOf" stringvalue="systems.tech247.security.SecuritySetupTopComponent"/>
+                    <attr boolvalue="true" name="xmlproperties.preventStoring"/>
+                </file>
+                <file name="Security.instance">
+                    <!--systems.tech247.security.SecurityTopComponent-->
+                    <attr
+                        methodvalue="org.netbeans.api.settings.Factory.create" name="instanceCreate"/>
+                    <attr
+                        methodvalue="org.netbeans.api.settings.Factory.properties" name="settings.convertor"/>
+                    <attr name="settings.instanceClass" stringvalue="systems.tech247.security.SecurityTopComponent"/>
+                    <attr name="settings.instanceOf" stringvalue="systems.tech247.security.SecurityTopComponent"/>
+                    <attr boolvalue="true" name="xmlproperties.preventStoring"/>
+                </file>
+                <file name="Users.instance">
+                    <!--systems.tech247.security.UsersTopComponent-->
+                    <attr
+                        methodvalue="org.netbeans.api.settings.Factory.create" name="instanceCreate"/>
+                    <attr
+                        methodvalue="org.netbeans.api.settings.Factory.properties" name="settings.convertor"/>
+                    <attr name="settings.instanceClass" stringvalue="systems.tech247.security.UsersTopComponent"/>
+                    <attr name="settings.instanceOf" stringvalue="systems.tech247.security.UsersTopComponent"/>
+                    <attr boolvalue="true" name="xmlproperties.preventStoring"/>
+                </file>
+                <file name="GroupEditor.instance">
+                    <!--systems.tech247.securitypannels.GroupEditorTopComponent-->
+                    <attr
+                        methodvalue="org.netbeans.api.settings.Factory.create" name="instanceCreate"/>
+                    <attr
+                        methodvalue="org.netbeans.api.settings.Factory.properties" name="settings.convertor"/>
+                    <attr name="settings.instanceClass" stringvalue="systems.tech247.securitypannels.GroupEditorTopComponent"/>
+                    <attr name="settings.instanceOf" stringvalue="systems.tech247.securitypannels.GroupEditorTopComponent"/>
+                    <attr boolvalue="true" name="xmlproperties.preventStoring"/>
+                </file>
+                <file name="PolicyCategoryEditor.instance">
+                    <!--systems.tech247.securitypannels.PolicyCategoryEditorTopComponent-->
+                    <attr
+                        methodvalue="org.netbeans.api.settings.Factory.create" name="instanceCreate"/>
+                    <attr
+                        methodvalue="org.netbeans.api.settings.Factory.properties" name="settings.convertor"/>
+                    <attr name="settings.instanceClass" stringvalue="systems.tech247.securitypannels.PolicyCategoryEditorTopComponent"/>
+                    <attr name="settings.instanceOf" stringvalue="systems.tech247.securitypannels.PolicyCategoryEditorTopComponent"/>
+                    <attr boolvalue="true" name="xmlproperties.preventStoring"/>
+                </file>
+                <file name="PolicyEditor.instance">
+                    <!--systems.tech247.securitypannels.PolicyEditorTopComponent-->
+                    <attr
+                        methodvalue="org.netbeans.api.settings.Factory.create" name="instanceCreate"/>
+                    <attr
+                        methodvalue="org.netbeans.api.settings.Factory.properties" name="settings.convertor"/>
+                    <attr name="settings.instanceClass" stringvalue="systems.tech247.securitypannels.PolicyEditorTopComponent"/>
+                    <attr name="settings.instanceOf" stringvalue="systems.tech247.securitypannels.PolicyEditorTopComponent"/>
+                    <attr boolvalue="true" name="xmlproperties.preventStoring"/>
+                </file>
+            </folder>
+            <folder name="systems_tech247_securitypannels">
+                <file name="UserEditor.instance">
+                    <!--systems.tech247.securitypannels.UserEditorTopComponent-->
+                    <attr
+                        methodvalue="org.netbeans.api.settings.Factory.create" name="instanceCreate"/>
+                    <attr
+                        methodvalue="org.netbeans.api.settings.Factory.properties" name="settings.convertor"/>
+                    <attr name="settings.instanceClass" stringvalue="systems.tech247.securitypannels.UserEditorTopComponent"/>
+                    <attr name="settings.instanceOf" stringvalue="systems.tech247.securitypannels.UserEditorTopComponent"/>
+                    <attr boolvalue="true" name="xmlproperties.preventStoring"/>
+                </file>
+            </folder>
+        </folder>
+    </folder>
+    <folder name="Windows2">
+        <folder name="Components">
+            <file name="AppLaunchTopComponent.settings">
+                <!--systems.tech247.menus.AppLaunchTopComponent--><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE settings PUBLIC "-//NetBeans//DTD Session settings 1.0//EN" "http://www.netbeans.org/dtds/sessionsettings-1_0.dtd">
+<settings version="1.0">
+  <instance class="systems.tech247.menus.AppLaunchTopComponent"/>
+</settings>
+]]></file>
+            <file name="AppMenuTopComponent.settings">
+                <!--systems.tech247.menus.AppMenuTopComponent--><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE settings PUBLIC "-//NetBeans//DTD Session settings 1.0//EN" "http://www.netbeans.org/dtds/sessionsettings-1_0.dtd">
+<settings version="1.0">
+  <instance class="systems.tech247.menus.AppMenuTopComponent"/>
+</settings>
+]]></file>
+            <file name="AppModulesTopComponent.settings">
+                <!--systems.tech247.menus.AppModulesTopComponent--><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE settings PUBLIC "-//NetBeans//DTD Session settings 1.0//EN" "http://www.netbeans.org/dtds/sessionsettings-1_0.dtd">
+<settings version="1.0">
+  <instance class="systems.tech247.menus.AppModulesTopComponent"/>
+</settings>
+]]></file>
+            <file name="RolesTopComponent.settings">
+                <!--systems.tech247.security.RolesTopComponent--><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE settings PUBLIC "-//NetBeans//DTD Session settings 1.0//EN" "http://www.netbeans.org/dtds/sessionsettings-1_0.dtd">
+<settings version="1.0">
+  <instance class="systems.tech247.security.RolesTopComponent"/>
+</settings>
+]]></file>
+            <file name="UsersTopComponent.settings">
+                <!--systems.tech247.security.UsersTopComponent--><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE settings PUBLIC "-//NetBeans//DTD Session settings 1.0//EN" "http://www.netbeans.org/dtds/sessionsettings-1_0.dtd">
+<settings version="1.0">
+  <instance class="systems.tech247.security.UsersTopComponent"/>
+</settings>
+]]></file>
+            <file name="UserEditorTopComponent.settings">
+                <!--systems.tech247.securitypannels.UserEditorTopComponent--><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE settings PUBLIC "-//NetBeans//DTD Session settings 1.0//EN" "http://www.netbeans.org/dtds/sessionsettings-1_0.dtd">
+<settings version="1.0">
+  <instance class="systems.tech247.securitypannels.UserEditorTopComponent"/>
+</settings>
+]]></file>
+        </folder>
+        <folder name="Modes">
+            <folder name="editor">
+                <file name="AppLaunchTopComponent.wstcref">
+                    <!--systems.tech247.menus.AppLaunchTopComponent--><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tc-ref PUBLIC "-//NetBeans//DTD Top Component in Mode Properties 2.0//EN" "http://www.netbeans.org/dtds/tc-ref2_0.dtd">
+<tc-ref version="2.0">
+  <tc-id id="AppLaunchTopComponent"/>
+  <state opened="false"/>
+</tc-ref>
+]]></file>
+                <file name="AppModulesTopComponent.wstcref">
+                    <!--systems.tech247.menus.AppModulesTopComponent--><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tc-ref PUBLIC "-//NetBeans//DTD Top Component in Mode Properties 2.0//EN" "http://www.netbeans.org/dtds/tc-ref2_0.dtd">
+<tc-ref version="2.0">
+  <tc-id id="AppModulesTopComponent"/>
+  <state opened="false"/>
+</tc-ref>
+]]></file>
+                <file name="RolesTopComponent.wstcref">
+                    <!--systems.tech247.security.RolesTopComponent--><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tc-ref PUBLIC "-//NetBeans//DTD Top Component in Mode Properties 2.0//EN" "http://www.netbeans.org/dtds/tc-ref2_0.dtd">
+<tc-ref version="2.0">
+  <tc-id id="RolesTopComponent"/>
+  <state opened="false"/>
+</tc-ref>
+]]></file>
+                <file name="UsersTopComponent.wstcref">
+                    <!--systems.tech247.security.UsersTopComponent--><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tc-ref PUBLIC "-//NetBeans//DTD Top Component in Mode Properties 2.0//EN" "http://www.netbeans.org/dtds/tc-ref2_0.dtd">
+<tc-ref version="2.0">
+  <tc-id id="UsersTopComponent"/>
+  <state opened="false"/>
+</tc-ref>
+]]></file>
+                <file name="UserEditorTopComponent.wstcref">
+                    <!--systems.tech247.securitypannels.UserEditorTopComponent--><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tc-ref PUBLIC "-//NetBeans//DTD Top Component in Mode Properties 2.0//EN" "http://www.netbeans.org/dtds/tc-ref2_0.dtd">
+<tc-ref version="2.0">
+  <tc-id id="UserEditorTopComponent"/>
+  <state opened="false"/>
+</tc-ref>
+]]></file>
+            </folder>
+            <folder name="explorer">
+                <file name="AppMenuTopComponent.wstcref">
+                    <!--systems.tech247.menus.AppMenuTopComponent--><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tc-ref PUBLIC "-//NetBeans//DTD Top Component in Mode Properties 2.0//EN" "http://www.netbeans.org/dtds/tc-ref2_0.dtd">
+<tc-ref version="2.0">
+  <tc-id id="AppMenuTopComponent"/>
+  <state opened="false"/>
+</tc-ref>
+]]></file>
+            </folder>
+        </folder>
+        <folder name="Roles">
+            <folder name="Security">
+                <folder name="Components">
+                    <file name="SecurityOptionsTopComponent.settings">
+                        <!--systems.tech247.menus.SecurityOptionsTopComponent--><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE settings PUBLIC "-//NetBeans//DTD Session settings 1.0//EN" "http://www.netbeans.org/dtds/sessionsettings-1_0.dtd">
+<settings version="1.0">
+  <instance class="systems.tech247.menus.SecurityOptionsTopComponent"/>
+</settings>
+]]></file>
+                    <file name="SecuritySetupTopComponent.settings">
+                        <!--systems.tech247.security.SecuritySetupTopComponent--><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE settings PUBLIC "-//NetBeans//DTD Session settings 1.0//EN" "http://www.netbeans.org/dtds/sessionsettings-1_0.dtd">
+<settings version="1.0">
+  <instance class="systems.tech247.security.SecuritySetupTopComponent"/>
+</settings>
+]]></file>
+                    <file name="SecurityTopComponent.settings">
+                        <!--systems.tech247.security.SecurityTopComponent--><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE settings PUBLIC "-//NetBeans//DTD Session settings 1.0//EN" "http://www.netbeans.org/dtds/sessionsettings-1_0.dtd">
+<settings version="1.0">
+  <instance class="systems.tech247.security.SecurityTopComponent"/>
+</settings>
+]]></file>
+                    <file name="GroupEditorTopComponent.settings">
+                        <!--systems.tech247.securitypannels.GroupEditorTopComponent--><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE settings PUBLIC "-//NetBeans//DTD Session settings 1.0//EN" "http://www.netbeans.org/dtds/sessionsettings-1_0.dtd">
+<settings version="1.0">
+  <instance class="systems.tech247.securitypannels.GroupEditorTopComponent"/>
+</settings>
+]]></file>
+                    <file name="PolicyCategoryEditorTopComponent.settings">
+                        <!--systems.tech247.securitypannels.PolicyCategoryEditorTopComponent--><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE settings PUBLIC "-//NetBeans//DTD Session settings 1.0//EN" "http://www.netbeans.org/dtds/sessionsettings-1_0.dtd">
+<settings version="1.0">
+  <instance class="systems.tech247.securitypannels.PolicyCategoryEditorTopComponent"/>
+</settings>
+]]></file>
+                    <file name="PolicyEditorTopComponent.settings">
+                        <!--systems.tech247.securitypannels.PolicyEditorTopComponent--><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE settings PUBLIC "-//NetBeans//DTD Session settings 1.0//EN" "http://www.netbeans.org/dtds/sessionsettings-1_0.dtd">
+<settings version="1.0">
+  <instance class="systems.tech247.securitypannels.PolicyEditorTopComponent"/>
+</settings>
+]]></file>
+                </folder>
+                <folder name="Modes">
+                    <folder name="editor">
+                        <file name="SecurityOptionsTopComponent.wstcref">
+                            <!--systems.tech247.menus.SecurityOptionsTopComponent--><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tc-ref PUBLIC "-//NetBeans//DTD Top Component in Mode Properties 2.0//EN" "http://www.netbeans.org/dtds/tc-ref2_0.dtd">
+<tc-ref version="2.0">
+  <tc-id id="SecurityOptionsTopComponent"/>
+  <state opened="false"/>
+</tc-ref>
+]]></file>
+                        <file name="SecurityTopComponent.wstcref">
+                            <!--systems.tech247.security.SecurityTopComponent--><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tc-ref PUBLIC "-//NetBeans//DTD Top Component in Mode Properties 2.0//EN" "http://www.netbeans.org/dtds/tc-ref2_0.dtd">
+<tc-ref version="2.0">
+  <tc-id id="SecurityTopComponent"/>
+  <state opened="true"/>
+</tc-ref>
+]]></file>
+                        <file name="GroupEditorTopComponent.wstcref">
+                            <!--systems.tech247.securitypannels.GroupEditorTopComponent--><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tc-ref PUBLIC "-//NetBeans//DTD Top Component in Mode Properties 2.0//EN" "http://www.netbeans.org/dtds/tc-ref2_0.dtd">
+<tc-ref version="2.0">
+  <tc-id id="GroupEditorTopComponent"/>
+  <state opened="false"/>
+</tc-ref>
+]]></file>
+                        <file name="PolicyCategoryEditorTopComponent.wstcref">
+                            <!--systems.tech247.securitypannels.PolicyCategoryEditorTopComponent--><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tc-ref PUBLIC "-//NetBeans//DTD Top Component in Mode Properties 2.0//EN" "http://www.netbeans.org/dtds/tc-ref2_0.dtd">
+<tc-ref version="2.0">
+  <tc-id id="PolicyCategoryEditorTopComponent"/>
+  <state opened="false"/>
+</tc-ref>
+]]></file>
+                        <file name="PolicyEditorTopComponent.wstcref">
+                            <!--systems.tech247.securitypannels.PolicyEditorTopComponent--><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tc-ref PUBLIC "-//NetBeans//DTD Top Component in Mode Properties 2.0//EN" "http://www.netbeans.org/dtds/tc-ref2_0.dtd">
+<tc-ref version="2.0">
+  <tc-id id="PolicyEditorTopComponent"/>
+  <state opened="false"/>
+</tc-ref>
+]]></file>
+                    </folder>
+                    <folder name="explorer">
+                        <file name="SecuritySetupTopComponent.wstcref">
+                            <!--systems.tech247.security.SecuritySetupTopComponent--><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tc-ref PUBLIC "-//NetBeans//DTD Top Component in Mode Properties 2.0//EN" "http://www.netbeans.org/dtds/tc-ref2_0.dtd">
+<tc-ref version="2.0">
+  <tc-id id="SecuritySetupTopComponent"/>
+  <state opened="true"/>
+</tc-ref>
+]]></file>
+                    </folder>
+                </folder>
+            </folder>
+        </folder>
+    </folder>
+</filesystem>
