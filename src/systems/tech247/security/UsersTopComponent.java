@@ -30,7 +30,7 @@ import org.openide.util.NbBundle.Messages;
         //iconBase="SET/PATH/TO/ICON/HERE", 
         persistenceType = TopComponent.PERSISTENCE_NEVER
 )
-@TopComponent.Registration(mode = "editor", openAtStartup = false)
+@TopComponent.Registration(mode = "explorer", openAtStartup = false)
 @ActionID(category = "Window", id = "systems.tech247.security.UsersTopComponent")
 @ActionReference(path = "Menu/System" , position = 250,separatorAfter=251)
 @TopComponent.OpenActionRegistration(
@@ -50,6 +50,7 @@ public final class UsersTopComponent extends TopComponent
         initComponents();
         setName(Bundle.CTL_UsersTopComponent());
         setToolTipText(Bundle.HINT_UsersTopComponent());
+        putClientProperty(TopComponent.PROP_CLOSING_DISABLED, Boolean.TRUE);
         viewHolder.setLayout(new BorderLayout());
         BeanTreeView btv = new BeanTreeView();
         

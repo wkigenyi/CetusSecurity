@@ -321,7 +321,9 @@ public static HrsUsers showLoginScreen() throws NoSuchAlgorithmException, IOExce
         switch(chosenModuleID){
             case 13:
                 
-              wm.setRole("Security");
+              //wm.setRole("Security");
+                 TopComponent tc13 = WindowManager.getDefault().findTopComponent("SecurityDashBoardTopComponent");
+                tc13.open();
          
                 
                 break;

@@ -5,61 +5,46 @@
  */
 package systems.tech247.security;
 
-import java.awt.BorderLayout;
 import org.netbeans.api.settings.ConvertAsProperties;
 import org.openide.awt.ActionID;
 import org.openide.awt.ActionReference;
-import org.openide.explorer.ExplorerManager;
-import org.openide.explorer.ExplorerUtils;
-import org.openide.explorer.view.BeanTreeView;
-import org.openide.nodes.AbstractNode;
-import org.openide.nodes.Children;
+import org.openide.awt.StatusDisplayer;
 import org.openide.windows.TopComponent;
 import org.openide.util.NbBundle.Messages;
-import systems.tech247.hr.HrsGroups;
+import org.openide.windows.TopComponentGroup;
+import org.openide.windows.WindowManager;
+import systems.tech247.util.CetusUTL;
 
 /**
  * Top component which displays something.
  */
 @ConvertAsProperties(
-        dtd = "-//systems.tech247.security//SecuritySetup//EN",
+        dtd = "-//systems.tech247.security//SecurityDashBoard//EN",
         autostore = false
 )
 @TopComponent.Description(
-        preferredID = "SecuritySetupTopComponent",
+        preferredID = "SecurityDashBoardTopComponent",
         //iconBase="SET/PATH/TO/ICON/HERE", 
         persistenceType = TopComponent.PERSISTENCE_NEVER
 )
-@TopComponent.Registration(mode = "explorer", openAtStartup = false/*,roles={"Security"}*/)
-@ActionID(category = "Window", id = "systems.tech247.security.SecuritySetupTopComponent")
+@TopComponent.Registration(mode = "leftSlidingSide", openAtStartup = false)
+@ActionID(category = "Window", id = "systems.tech247.security.SecurityDashBoardTopComponent")
 @ActionReference(path = "Menu/Window" /*, position = 333 */)
 @TopComponent.OpenActionRegistration(
-        displayName = "#CTL_SecuritySetupAction",
-        preferredID = "SecuritySetupTopComponent"
+        displayName = "#CTL_SecurityDashBoardAction",
+        preferredID = "SecurityDashBoardTopComponent"
 )
 @Messages({
-    "CTL_SecuritySetupAction=Security Setup",
-    "CTL_SecuritySetupTopComponent=Security Setup",
-    "HINT_SecuritySetupTopComponent="
+    "CTL_SecurityDashBoardAction=SecurityDashBoard",
+    "CTL_SecurityDashBoardTopComponent=Security DashBoard",
+    "HINT_SecurityDashBoardTopComponent="
 })
-public final class SecuritySetupTopComponent extends TopComponent implements ExplorerManager.Provider{
-    
-    
-    HrsGroups group;
-    ExplorerManager em = new ExplorerManager();
-    public SecuritySetupTopComponent() {
+public final class SecurityDashBoardTopComponent extends TopComponent {
+    TopComponentGroup group = WindowManager.getDefault().findTopComponentGroup("SCRGroup");
+    public SecurityDashBoardTopComponent() {
         initComponents();
-        setName(Bundle.CTL_SecuritySetupTopComponent());
-        setToolTipText(Bundle.HINT_SecuritySetupTopComponent());
-        putClientProperty(TopComponent.PROP_CLOSING_DISABLED, Boolean.TRUE);
-        BeanTreeView btv = new BeanTreeView();
-        btv.setRootVisible(false);
-        setLayout(new BorderLayout());
-        add(btv);
-        associateLookup(ExplorerUtils.createLookup(em, getActionMap()));
-        
-        
-        
+        setName(Bundle.CTL_SecurityDashBoardTopComponent());
+        setToolTipText(Bundle.HINT_SecurityDashBoardTopComponent());
 
     }
 
@@ -87,13 +72,19 @@ public final class SecuritySetupTopComponent extends TopComponent implements Exp
     // End of variables declaration//GEN-END:variables
     @Override
     public void componentOpened() {
-        
-        loadSetup();
+        // TODO add custom code on component opening
+        showSCR();
     }
 
     @Override
     public void componentClosed() {
         // TODO add custom code on component closing
+    }
+    
+    @Override
+    protected void componentActivated() {
+        super.componentActivated(); //To change body of generated methods, choose Tools | Templates.
+        showSCR();
     }
 
     void writeProperties(java.util.Properties p) {
@@ -107,17 +98,25 @@ public final class SecuritySetupTopComponent extends TopComponent implements Exp
         String version = p.getProperty("version");
         // TODO read your settings according to their version
     }
-
-    @Override
-    public ExplorerManager getExplorerManager() {
-        return em;
+    
+    void showSCR(){
+        TopComponentGroup tcg = CetusUTL.currentTCG;
+        if(tcg != null){
+            tcg.close();
+        }
+//        //Close currently open TCs
+//        for(TopComponent tc : WindowManager.getDefault().getRegistry().getOpened()){
+//            tc.close();
+//        }
+        
+        if(group != null){
+            try{
+                group.open();
+                CetusUTL.currentTCG = group;
+                //StatusDisplayer.getDefault().setStatusText("Group Opened");
+            }catch(Exception ex){
+                StatusDisplayer.getDefault().setStatusText("Group Not Opened, Exception: "+ex.getLocalizedMessage());
+            }
+        }
     }
-    
-    void loadSetup(){
-        em.setRootContext(new AbstractNode(Children.create(new FactorySecuritySetup(), true)));
-    }
-
-
-    
-    
 }

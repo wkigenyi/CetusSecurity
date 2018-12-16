@@ -24,6 +24,20 @@ class Bundle {
         return org.openide.util.NbBundle.getMessage(Bundle.class, "CTL_SecurityAction");
     }
     /**
+     * @return <i>SecurityDashBoard</i>
+     * @see SecurityDashBoardTopComponent
+     */
+    static String CTL_SecurityDashBoardAction() {
+        return org.openide.util.NbBundle.getMessage(Bundle.class, "CTL_SecurityDashBoardAction");
+    }
+    /**
+     * @return <i>Security DashBoard</i>
+     * @see SecurityDashBoardTopComponent
+     */
+    static String CTL_SecurityDashBoardTopComponent() {
+        return org.openide.util.NbBundle.getMessage(Bundle.class, "CTL_SecurityDashBoardTopComponent");
+    }
+    /**
      * @return <i>Security Setup</i>
      * @see SecuritySetupTopComponent
      */
@@ -64,6 +78,13 @@ class Bundle {
      */
     static String HINT_RolesTopComponent() {
         return org.openide.util.NbBundle.getMessage(Bundle.class, "HINT_RolesTopComponent");
+    }
+    /**
+     * @return 
+     * @see SecurityDashBoardTopComponent
+     */
+    static String HINT_SecurityDashBoardTopComponent() {
+        return org.openide.util.NbBundle.getMessage(Bundle.class, "HINT_SecurityDashBoardTopComponent");
     }
     /**
      * @return 

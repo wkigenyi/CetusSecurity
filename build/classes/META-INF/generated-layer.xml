@@ -61,6 +61,15 @@
                 <attr
                     bundlevalue="systems.tech247.security.Bundle#CTL_RolesAction" name="displayName"/>
             </file>
+            <file name="systems-tech247-security-SecurityDashBoardTopComponent.instance">
+                <!--systems.tech247.security.SecurityDashBoardTopComponent-->
+                <attr
+                    methodvalue="org.openide.windows.TopComponent.openAction" name="instanceCreate"/>
+                <attr name="component" newvalue="systems.tech247.security.SecurityDashBoardTopComponent"/>
+                <attr name="preferredID" stringvalue="SecurityDashBoardTopComponent"/>
+                <attr
+                    bundlevalue="systems.tech247.security.Bundle#CTL_SecurityDashBoardAction" name="displayName"/>
+            </file>
             <file name="systems-tech247-security-SecuritySetupTopComponent.instance">
                 <!--systems.tech247.security.SecuritySetupTopComponent-->
                 <attr
@@ -78,6 +87,15 @@
                 <attr name="preferredID" stringvalue="UsersTopComponent"/>
                 <attr
                     bundlevalue="systems.tech247.security.Bundle#CTL_UsersAction" name="displayName"/>
+            </file>
+            <file name="systems-tech247-security-reports-SecurityReportsTopComponent.instance">
+                <!--systems.tech247.security.reports.SecurityReportsTopComponent-->
+                <attr
+                    methodvalue="org.openide.windows.TopComponent.openAction" name="instanceCreate"/>
+                <attr name="component" newvalue="systems.tech247.security.reports.SecurityReportsTopComponent"/>
+                <attr name="preferredID" stringvalue="SecurityReportsTopComponent"/>
+                <attr
+                    bundlevalue="systems.tech247.security.reports.Bundle#CTL_SecurityReportsAction" name="displayName"/>
             </file>
             <file name="systems-tech247-security-GroupEditorTopComponent.instance">
                 <!--systems.tech247.securitypannels.GroupEditorTopComponent-->
@@ -130,9 +148,17 @@
                 <!--systems.tech247.menus.SecurityOptionsTopComponent-->
                 <attr name="originalFile" stringvalue="Actions/Window/systems-tech247-security-SecurityOptionsTopComponent.instance"/>
             </file>
+            <file name="systems-tech247-security-SecurityDashBoardTopComponent.shadow">
+                <!--systems.tech247.security.SecurityDashBoardTopComponent-->
+                <attr name="originalFile" stringvalue="Actions/Window/systems-tech247-security-SecurityDashBoardTopComponent.instance"/>
+            </file>
             <file name="systems-tech247-security-SecuritySetupTopComponent.shadow">
                 <!--systems.tech247.security.SecuritySetupTopComponent-->
                 <attr name="originalFile" stringvalue="Actions/Window/systems-tech247-security-SecuritySetupTopComponent.instance"/>
+            </file>
+            <file name="systems-tech247-security-reports-SecurityReportsTopComponent.shadow">
+                <!--systems.tech247.security.reports.SecurityReportsTopComponent-->
+                <attr name="originalFile" stringvalue="Actions/Window/systems-tech247-security-reports-SecurityReportsTopComponent.instance"/>
             </file>
             <file name="systems-tech247-security-GroupEditorTopComponent.shadow">
                 <!--systems.tech247.securitypannels.GroupEditorTopComponent-->
@@ -212,6 +238,10 @@
                     <!--systems.tech247.security.RolesTopComponent-->
                     <attr name="hint.originalPublicID" stringvalue="-//systems.tech247.security//Roles//EN"/>
                 </file>
+                <file name="SecurityDashBoard" url="nbres:/org/netbeans/modules/settings/resources/properties-1_0.dtd">
+                    <!--systems.tech247.security.SecurityDashBoardTopComponent-->
+                    <attr name="hint.originalPublicID" stringvalue="-//systems.tech247.security//SecurityDashBoard//EN"/>
+                </file>
                 <file name="SecuritySetup" url="nbres:/org/netbeans/modules/settings/resources/properties-1_0.dtd">
                     <!--systems.tech247.security.SecuritySetupTopComponent-->
                     <attr name="hint.originalPublicID" stringvalue="-//systems.tech247.security//SecuritySetup//EN"/>
@@ -235,6 +265,12 @@
                 <file name="PolicyEditor" url="nbres:/org/netbeans/modules/settings/resources/properties-1_0.dtd">
                     <!--systems.tech247.securitypannels.PolicyEditorTopComponent-->
                     <attr name="hint.originalPublicID" stringvalue="-//systems.tech247.security//PolicyEditor//EN"/>
+                </file>
+            </folder>
+            <folder name="systems_tech247_security_reports">
+                <file name="SecurityReports" url="nbres:/org/netbeans/modules/settings/resources/properties-1_0.dtd">
+                    <!--systems.tech247.security.reports.SecurityReportsTopComponent-->
+                    <attr name="hint.originalPublicID" stringvalue="-//systems.tech247.security.reports//SecurityReports//EN"/>
                 </file>
             </folder>
             <folder name="systems_tech247_securitypannels">
@@ -270,6 +306,10 @@
                             <!--systems.tech247.security.RolesTopComponent-->
                             <attr name="settings.providerPath" stringvalue="xml/lookups//systems_tech247_security/Roles.instance"/>
                         </file>
+                        <file name="SecurityDashBoardTopComponent">
+                            <!--systems.tech247.security.SecurityDashBoardTopComponent-->
+                            <attr name="settings.providerPath" stringvalue="xml/lookups//systems_tech247_security/SecurityDashBoard.instance"/>
+                        </file>
                         <file name="SecuritySetupTopComponent">
                             <!--systems.tech247.security.SecuritySetupTopComponent-->
                             <attr name="settings.providerPath" stringvalue="xml/lookups//systems_tech247_security/SecuritySetup.instance"/>
@@ -282,6 +322,12 @@
                             <!--systems.tech247.security.UsersTopComponent-->
                             <attr name="settings.providerPath" stringvalue="xml/lookups//systems_tech247_security/Users.instance"/>
                         </file>
+                        <folder name="reports">
+                            <file name="SecurityReportsTopComponent">
+                                <!--systems.tech247.security.reports.SecurityReportsTopComponent-->
+                                <attr name="settings.providerPath" stringvalue="xml/lookups//systems_tech247_security_reports/SecurityReports.instance"/>
+                            </file>
+                        </folder>
                     </folder>
                     <folder name="securitypannels">
                         <file name="GroupEditorTopComponent">
@@ -360,6 +406,16 @@
                     <attr name="settings.instanceOf" stringvalue="systems.tech247.security.RolesTopComponent"/>
                     <attr boolvalue="true" name="xmlproperties.preventStoring"/>
                 </file>
+                <file name="SecurityDashBoard.instance">
+                    <!--systems.tech247.security.SecurityDashBoardTopComponent-->
+                    <attr
+                        methodvalue="org.netbeans.api.settings.Factory.create" name="instanceCreate"/>
+                    <attr
+                        methodvalue="org.netbeans.api.settings.Factory.properties" name="settings.convertor"/>
+                    <attr name="settings.instanceClass" stringvalue="systems.tech247.security.SecurityDashBoardTopComponent"/>
+                    <attr name="settings.instanceOf" stringvalue="systems.tech247.security.SecurityDashBoardTopComponent"/>
+                    <attr boolvalue="true" name="xmlproperties.preventStoring"/>
+                </file>
                 <file name="SecuritySetup.instance">
                     <!--systems.tech247.security.SecuritySetupTopComponent-->
                     <attr
@@ -421,6 +477,18 @@
                     <attr boolvalue="true" name="xmlproperties.preventStoring"/>
                 </file>
             </folder>
+            <folder name="systems_tech247_security_reports">
+                <file name="SecurityReports.instance">
+                    <!--systems.tech247.security.reports.SecurityReportsTopComponent-->
+                    <attr
+                        methodvalue="org.netbeans.api.settings.Factory.create" name="instanceCreate"/>
+                    <attr
+                        methodvalue="org.netbeans.api.settings.Factory.properties" name="settings.convertor"/>
+                    <attr name="settings.instanceClass" stringvalue="systems.tech247.security.reports.SecurityReportsTopComponent"/>
+                    <attr name="settings.instanceOf" stringvalue="systems.tech247.security.reports.SecurityReportsTopComponent"/>
+                    <attr boolvalue="true" name="xmlproperties.preventStoring"/>
+                </file>
+            </folder>
             <folder name="systems_tech247_securitypannels">
                 <file name="UserEditor.instance">
                     <!--systems.tech247.securitypannels.UserEditorTopComponent-->
@@ -465,11 +533,32 @@
   <instance class="systems.tech247.security.RolesTopComponent"/>
 </settings>
 ]]></file>
+            <file name="SecurityDashBoardTopComponent.settings">
+                <!--systems.tech247.security.SecurityDashBoardTopComponent--><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE settings PUBLIC "-//NetBeans//DTD Session settings 1.0//EN" "http://www.netbeans.org/dtds/sessionsettings-1_0.dtd">
+<settings version="1.0">
+  <instance class="systems.tech247.security.SecurityDashBoardTopComponent"/>
+</settings>
+]]></file>
+            <file name="SecuritySetupTopComponent.settings">
+                <!--systems.tech247.security.SecuritySetupTopComponent--><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE settings PUBLIC "-//NetBeans//DTD Session settings 1.0//EN" "http://www.netbeans.org/dtds/sessionsettings-1_0.dtd">
+<settings version="1.0">
+  <instance class="systems.tech247.security.SecuritySetupTopComponent"/>
+</settings>
+]]></file>
             <file name="UsersTopComponent.settings">
                 <!--systems.tech247.security.UsersTopComponent--><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE settings PUBLIC "-//NetBeans//DTD Session settings 1.0//EN" "http://www.netbeans.org/dtds/sessionsettings-1_0.dtd">
 <settings version="1.0">
   <instance class="systems.tech247.security.UsersTopComponent"/>
+</settings>
+]]></file>
+            <file name="SecurityReportsTopComponent.settings">
+                <!--systems.tech247.security.reports.SecurityReportsTopComponent--><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE settings PUBLIC "-//NetBeans//DTD Session settings 1.0//EN" "http://www.netbeans.org/dtds/sessionsettings-1_0.dtd">
+<settings version="1.0">
+  <instance class="systems.tech247.security.reports.SecurityReportsTopComponent"/>
 </settings>
 ]]></file>
             <file name="UserEditorTopComponent.settings">
@@ -506,14 +595,6 @@
   <state opened="false"/>
 </tc-ref>
 ]]></file>
-                <file name="UsersTopComponent.wstcref">
-                    <!--systems.tech247.security.UsersTopComponent--><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE tc-ref PUBLIC "-//NetBeans//DTD Top Component in Mode Properties 2.0//EN" "http://www.netbeans.org/dtds/tc-ref2_0.dtd">
-<tc-ref version="2.0">
-  <tc-id id="UsersTopComponent"/>
-  <state opened="false"/>
-</tc-ref>
-]]></file>
                 <file name="UserEditorTopComponent.wstcref">
                     <!--systems.tech247.securitypannels.UserEditorTopComponent--><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE tc-ref PUBLIC "-//NetBeans//DTD Top Component in Mode Properties 2.0//EN" "http://www.netbeans.org/dtds/tc-ref2_0.dtd">
@@ -532,6 +613,40 @@
   <state opened="false"/>
 </tc-ref>
 ]]></file>
+                <file name="SecuritySetupTopComponent.wstcref">
+                    <!--systems.tech247.security.SecuritySetupTopComponent--><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tc-ref PUBLIC "-//NetBeans//DTD Top Component in Mode Properties 2.0//EN" "http://www.netbeans.org/dtds/tc-ref2_0.dtd">
+<tc-ref version="2.0">
+  <tc-id id="SecuritySetupTopComponent"/>
+  <state opened="false"/>
+</tc-ref>
+]]></file>
+                <file name="UsersTopComponent.wstcref">
+                    <!--systems.tech247.security.UsersTopComponent--><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tc-ref PUBLIC "-//NetBeans//DTD Top Component in Mode Properties 2.0//EN" "http://www.netbeans.org/dtds/tc-ref2_0.dtd">
+<tc-ref version="2.0">
+  <tc-id id="UsersTopComponent"/>
+  <state opened="false"/>
+</tc-ref>
+]]></file>
+                <file name="SecurityReportsTopComponent.wstcref">
+                    <!--systems.tech247.security.reports.SecurityReportsTopComponent--><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tc-ref PUBLIC "-//NetBeans//DTD Top Component in Mode Properties 2.0//EN" "http://www.netbeans.org/dtds/tc-ref2_0.dtd">
+<tc-ref version="2.0">
+  <tc-id id="SecurityReportsTopComponent"/>
+  <state opened="false"/>
+</tc-ref>
+]]></file>
+            </folder>
+            <folder name="leftSlidingSide">
+                <file name="SecurityDashBoardTopComponent.wstcref">
+                    <!--systems.tech247.security.SecurityDashBoardTopComponent--><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tc-ref PUBLIC "-//NetBeans//DTD Top Component in Mode Properties 2.0//EN" "http://www.netbeans.org/dtds/tc-ref2_0.dtd">
+<tc-ref version="2.0">
+  <tc-id id="SecurityDashBoardTopComponent"/>
+  <state opened="false"/>
+</tc-ref>
+]]></file>
             </folder>
         </folder>
         <folder name="Roles">
@@ -542,13 +657,6 @@
 <!DOCTYPE settings PUBLIC "-//NetBeans//DTD Session settings 1.0//EN" "http://www.netbeans.org/dtds/sessionsettings-1_0.dtd">
 <settings version="1.0">
   <instance class="systems.tech247.menus.SecurityOptionsTopComponent"/>
-</settings>
-]]></file>
-                    <file name="SecuritySetupTopComponent.settings">
-                        <!--systems.tech247.security.SecuritySetupTopComponent--><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE settings PUBLIC "-//NetBeans//DTD Session settings 1.0//EN" "http://www.netbeans.org/dtds/sessionsettings-1_0.dtd">
-<settings version="1.0">
-  <instance class="systems.tech247.security.SecuritySetupTopComponent"/>
 </settings>
 ]]></file>
                     <file name="SecurityTopComponent.settings">
@@ -620,16 +728,6 @@
 <tc-ref version="2.0">
   <tc-id id="PolicyEditorTopComponent"/>
   <state opened="false"/>
-</tc-ref>
-]]></file>
-                    </folder>
-                    <folder name="explorer">
-                        <file name="SecuritySetupTopComponent.wstcref">
-                            <!--systems.tech247.security.SecuritySetupTopComponent--><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE tc-ref PUBLIC "-//NetBeans//DTD Top Component in Mode Properties 2.0//EN" "http://www.netbeans.org/dtds/tc-ref2_0.dtd">
-<tc-ref version="2.0">
-  <tc-id id="SecuritySetupTopComponent"/>
-  <state opened="true"/>
 </tc-ref>
 ]]></file>
                     </folder>

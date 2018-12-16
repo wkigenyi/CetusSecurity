@@ -3,63 +3,45 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package systems.tech247.security;
+package systems.tech247.security.reports;
 
-import java.awt.BorderLayout;
 import org.netbeans.api.settings.ConvertAsProperties;
 import org.openide.awt.ActionID;
 import org.openide.awt.ActionReference;
-import org.openide.explorer.ExplorerManager;
-import org.openide.explorer.ExplorerUtils;
-import org.openide.explorer.view.BeanTreeView;
-import org.openide.nodes.AbstractNode;
-import org.openide.nodes.Children;
 import org.openide.windows.TopComponent;
 import org.openide.util.NbBundle.Messages;
-import systems.tech247.hr.HrsGroups;
 
 /**
  * Top component which displays something.
  */
 @ConvertAsProperties(
-        dtd = "-//systems.tech247.security//SecuritySetup//EN",
+        dtd = "-//systems.tech247.security.reports//SecurityReports//EN",
         autostore = false
 )
 @TopComponent.Description(
-        preferredID = "SecuritySetupTopComponent",
+        preferredID = "SecurityReportsTopComponent",
         //iconBase="SET/PATH/TO/ICON/HERE", 
         persistenceType = TopComponent.PERSISTENCE_NEVER
 )
-@TopComponent.Registration(mode = "explorer", openAtStartup = false/*,roles={"Security"}*/)
-@ActionID(category = "Window", id = "systems.tech247.security.SecuritySetupTopComponent")
+@TopComponent.Registration(mode = "explorer", openAtStartup = false)
+@ActionID(category = "Window", id = "systems.tech247.security.reports.SecurityReportsTopComponent")
 @ActionReference(path = "Menu/Window" /*, position = 333 */)
 @TopComponent.OpenActionRegistration(
-        displayName = "#CTL_SecuritySetupAction",
-        preferredID = "SecuritySetupTopComponent"
+        displayName = "#CTL_SecurityReportsAction",
+        preferredID = "SecurityReportsTopComponent"
 )
 @Messages({
-    "CTL_SecuritySetupAction=Security Setup",
-    "CTL_SecuritySetupTopComponent=Security Setup",
-    "HINT_SecuritySetupTopComponent="
+    "CTL_SecurityReportsAction=SecurityReports",
+    "CTL_SecurityReportsTopComponent=SecurityReports Window",
+    "HINT_SecurityReportsTopComponent=This is a SecurityReports window"
 })
-public final class SecuritySetupTopComponent extends TopComponent implements ExplorerManager.Provider{
-    
-    
-    HrsGroups group;
-    ExplorerManager em = new ExplorerManager();
-    public SecuritySetupTopComponent() {
+public final class SecurityReportsTopComponent extends TopComponent {
+
+    public SecurityReportsTopComponent() {
         initComponents();
-        setName(Bundle.CTL_SecuritySetupTopComponent());
-        setToolTipText(Bundle.HINT_SecuritySetupTopComponent());
+        setName(Bundle.CTL_SecurityReportsTopComponent());
+        setToolTipText(Bundle.HINT_SecurityReportsTopComponent());
         putClientProperty(TopComponent.PROP_CLOSING_DISABLED, Boolean.TRUE);
-        BeanTreeView btv = new BeanTreeView();
-        btv.setRootVisible(false);
-        setLayout(new BorderLayout());
-        add(btv);
-        associateLookup(ExplorerUtils.createLookup(em, getActionMap()));
-        
-        
-        
 
     }
 
@@ -87,8 +69,7 @@ public final class SecuritySetupTopComponent extends TopComponent implements Exp
     // End of variables declaration//GEN-END:variables
     @Override
     public void componentOpened() {
-        
-        loadSetup();
+        // TODO add custom code on component opening
     }
 
     @Override
@@ -107,17 +88,4 @@ public final class SecuritySetupTopComponent extends TopComponent implements Exp
         String version = p.getProperty("version");
         // TODO read your settings according to their version
     }
-
-    @Override
-    public ExplorerManager getExplorerManager() {
-        return em;
-    }
-    
-    void loadSetup(){
-        em.setRootContext(new AbstractNode(Children.create(new FactorySecuritySetup(), true)));
-    }
-
-
-    
-    
 }

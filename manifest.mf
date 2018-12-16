@@ -2,6 +2,7 @@ Manifest-Version: 1.0
 AutoUpdate-Show-In-Client: true
 OpenIDE-Module: systems.tech247.security
 OpenIDE-Module-Install: systems/tech247/security/Installer.class
+OpenIDE-Module-Layer: systems/tech247/security/layer.xml
 OpenIDE-Module-Localizing-Bundle: systems/tech247/security/Bundle.properties
 OpenIDE-Module-Requires: org.openide.windows.WindowManager
 OpenIDE-Module-Specification-Version: 1.0
