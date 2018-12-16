@@ -197,9 +197,9 @@ public class UtilitySecurity implements LoginProvider,Lookup.Provider{
         
         PasswordChanger changer = new PasswordChanger(user);
         if(isPasswordExpired(user)){
-            changer.presentExpiredPasswordScreen();
+            changer.presentExpiredPasswordScreen(user);
         }else{
-            changer.presentPasswordScreen();
+            changer.presentPasswordScreen(user);
             
         }
     }

@@ -22,7 +22,6 @@ import systems.tech247.dbaccess.DataAccess;
 
 import systems.tech247.hr.HrsSecurityOptions;
 import systems.tech247.hr.HrsUsers;
-import systems.tech247.util.NotifyUtil;
 
 
 /**
@@ -33,12 +32,12 @@ public class PasswordChanger {
     JButton change = new JButton("Change Password");
     JButton cancel = new JButton("Exit");
     PasswordPanel passwordChangeForm = new PasswordPanel();
-    HrsUsers userFromDB = null;
+    
     
     HrsSecurityOptions options =  DataAccess.getSecurityOptions();
 
-    public PasswordChanger(HrsUsers user) {
-        userFromDB = user;
+    public PasswordChanger(final HrsUsers user) {
+        
         
         
         change.addActionListener(new ActionListener() {
@@ -47,7 +46,7 @@ public class PasswordChanger {
                 
                 try {
                     if(!comparePasswords()){
-                        presentPasswordScreen();
+                        presentPasswordScreen(user);
                     }else{
                         //Save the password
                         
@@ -56,8 +55,8 @@ public class PasswordChanger {
                         //da.getEntityManagerHR().getTransaction().begin();
                        
                         //save the password
-                        DataAccess.savePassword(userFromDB, password);
-                        NotifyUtil.info("Your Password has been changed", "Password has been changed", false);
+                        DataAccess.savePassword(user, password);
+                        
                         
                         
                         
@@ -117,7 +116,7 @@ public class PasswordChanger {
     
     
     
-    public void presentPasswordScreen(){
+    public void presentPasswordScreen(HrsUsers user){
         
         passwordChangeForm.resetFields();
             NotifyDescriptor nd = new NotifyDescriptor(
@@ -128,14 +127,13 @@ public class PasswordChanger {
                 new Object[]{change,cancel},
                 null
             );
-    nd.setNoDefaultClose(false);
-        
+            nd.setNoDefaultClose(false);
             DialogDisplayer.getDefault().notifyLater(nd);
         
         
     }
 
-public void presentExpiredPasswordScreen(){
+public void presentExpiredPasswordScreen(HrsUsers user){
         
         passwordChangeForm.resetFields();
             NotifyDescriptor nd = new NotifyDescriptor(

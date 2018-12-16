@@ -28,6 +28,7 @@ import systems.tech247.hr.HrsSecurityOptions;
 
 
 import systems.tech247.hr.HrsUsers;
+import systems.tech247.util.CetusUTL;
 import systems.tech247.util.MessageType;
 import systems.tech247.util.NotifyUtil;
 
@@ -126,9 +127,9 @@ public class LoginDisplayer {
                     NotifyDescriptor nd = new DialogDescriptor("Your Account is locked until "+sdf.format(releaseTime)+"\nSee your Administrator.", "Account Locked");
                     nd.setNoDefaultClose(true);
                     Object result=DialogDisplayer.getDefault().notify(nd);
-                    if(result==NotifyDescriptor.OK_OPTION){
+                    //if(result==NotifyDescriptor.OK_OPTION){
                         LifecycleManager.getDefault().exit();
-                    }    
+                    //}    
                 }
                 
                 
@@ -149,7 +150,9 @@ public class LoginDisplayer {
                 
             }else if(UtilitySecurity.isPasswordExpired(userFromDB)){
                 DialogDisplayer.getDefault().notify(new DialogDescriptor("Your Password Expired", "Change Your Password"));
-                UtilitySecurity.showPasswordPrompt(user);
+                UtilitySecurity.showPasswordPrompt(userFromDB);
+            }else{ // All checks have been done
+                CetusUTL.content.add(userFromDB);
             }        
                      
         }else{
