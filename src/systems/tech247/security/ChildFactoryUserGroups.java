@@ -40,16 +40,16 @@ public class ChildFactoryUserGroups extends ChildFactory<Object> implements Look
     @Override
     protected boolean createKeys(List<Object> toPopulate) {
         
-        if(add){
-            toPopulate.add(new AddTool(new AbstractAction() {
-                @Override
-                public void actionPerformed(ActionEvent e) {
-                    TopComponent tc = new GroupEditorTopComponent();
-                    tc.open();
-                    tc.requestActive();
-                }
-            }));
-        }
+//        if(add){
+//            toPopulate.add(new AddTool(new AbstractAction() {
+//                @Override
+//                public void actionPerformed(ActionEvent e) {
+//                    TopComponent tc = new GroupEditorTopComponent();
+//                    tc.open();
+//                    tc.requestActive();
+//                }
+//            }));
+//        }
         
         //get this ability from the look
         ReloadableQueryCapability r = query.getLookup().lookup(ReloadableQueryCapability.class);

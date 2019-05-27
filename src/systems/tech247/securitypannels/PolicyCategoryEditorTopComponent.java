@@ -28,7 +28,6 @@ import static systems.tech247.dbaccess.DataAccess.entityManager;
 import systems.tech247.hr.HrsHRModules;
 import systems.tech247.hr.HrsPolicyCategories;
 import systems.tech247.menus.AppModulesTopComponent;
-import systems.tech247.security.PolicyCategory;
 import systems.tech247.security.RefreshPolicyCategoryEvent;
 import systems.tech247.util.NodeRefreshProvider;
 
@@ -44,11 +43,11 @@ import systems.tech247.util.NodeRefreshProvider;
 )
 @TopComponent.Registration(mode = "editor", openAtStartup = false,roles={"Security"})
 @ActionID(category = "Window", id = "systems.tech247.security.PolicyEditorTopComponent")
-@ActionReference(path = "Menu/Window" /*, position = 333 */)
-@TopComponent.OpenActionRegistration(
-        displayName = "#CTL_PolicyCategoryEditorAction",
-        preferredID = "PolicyCategoryEditorTopComponent"
-)
+//@ActionReference(path = "Menu/Window" /*, position = 333 */)
+//@TopComponent.OpenActionRegistration(
+//        displayName = "#CTL_PolicyCategoryEditorAction",
+//        preferredID = "PolicyCategoryEditorTopComponent"
+//)
 @NbBundle.Messages({
     "CTL_PolicyCategoryEditorAction=Policy Category Editor",
     "CTL_PolicyCategoryEditorTopComponent=Policy Category Editor",
@@ -218,7 +217,7 @@ public final class PolicyCategoryEditorTopComponent extends TopComponent impleme
                         .addGroup(layout.createSequentialGroup()
                             .addGap(10, 10, 10)
                             .addComponent(jLabel2))))
-                .addContainerGap(19, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

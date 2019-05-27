@@ -43,11 +43,11 @@ import systems.tech247.security.UtilitySecurity;
 )
 @TopComponent.Registration(mode = "explorer", openAtStartup = false)
 @ActionID(category = "Window", id = "systems.tech247.menus.AppMenuTopComponent")
-@ActionReference(path = "Menu/Window" /*, position = 333 */)
-@TopComponent.OpenActionRegistration(
-        displayName = "#CTL_AppMenuAction",
-        preferredID = "AppMenuTopComponent"
-)
+//@ActionReference(path = "Menu/Window" /*, position = 333 */)
+//@TopComponent.OpenActionRegistration(
+//        displayName = "#CTL_AppMenuAction",
+//        preferredID = "AppMenuTopComponent"
+//)
 @Messages({
     "CTL_AppMenuAction=AppMenu",
     "CTL_AppMenuTopComponent=AppMenu Window",

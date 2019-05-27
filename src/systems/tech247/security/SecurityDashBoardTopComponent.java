@@ -7,13 +7,13 @@ package systems.tech247.security;
 
 import org.netbeans.api.settings.ConvertAsProperties;
 import org.openide.awt.ActionID;
-import org.openide.awt.ActionReference;
 import org.openide.awt.StatusDisplayer;
 import org.openide.windows.TopComponent;
 import org.openide.util.NbBundle.Messages;
 import org.openide.windows.TopComponentGroup;
 import org.openide.windows.WindowManager;
 import systems.tech247.util.CetusUTL;
+import systems.tech247.util.NotifyUtil;
 
 /**
  * Top component which displays something.
@@ -29,11 +29,11 @@ import systems.tech247.util.CetusUTL;
 )
 @TopComponent.Registration(mode = "leftSlidingSide", openAtStartup = false)
 @ActionID(category = "Window", id = "systems.tech247.security.SecurityDashBoardTopComponent")
-@ActionReference(path = "Menu/Window" /*, position = 333 */)
-@TopComponent.OpenActionRegistration(
-        displayName = "#CTL_SecurityDashBoardAction",
-        preferredID = "SecurityDashBoardTopComponent"
-)
+//@ActionReference(path = "Menu/Window" /*, position = 333 */)
+//@TopComponent.OpenActionRegistration(
+//        displayName = "#CTL_SecurityDashBoardAction",
+//        preferredID = "SecurityDashBoardTopComponent"
+//)
 @Messages({
     "CTL_SecurityDashBoardAction=SecurityDashBoard",
     "CTL_SecurityDashBoardTopComponent=Security DashBoard",
@@ -102,6 +102,7 @@ public final class SecurityDashBoardTopComponent extends TopComponent {
     void showSCR(){
         TopComponentGroup tcg = CetusUTL.currentTCG;
         if(tcg != null){
+            
             tcg.close();
         }
 //        //Close currently open TCs
@@ -115,7 +116,7 @@ public final class SecurityDashBoardTopComponent extends TopComponent {
                 CetusUTL.currentTCG = group;
                 //StatusDisplayer.getDefault().setStatusText("Group Opened");
             }catch(Exception ex){
-                StatusDisplayer.getDefault().setStatusText("Group Not Opened, Exception: "+ex.getLocalizedMessage());
+                NotifyUtil.error("Error Opening Group", "There was an error opening this group", ex, false);
             }
         }
     }

@@ -35,11 +35,11 @@ import systems.tech247.security.HRModule;
 )
 @TopComponent.Registration(mode = "editor", openAtStartup = false)
 @ActionID(category = "Window", id = "systems.tech247.menus.AppLaunchTopComponent")
-@ActionReference(path = "Menu/Window" /*, position = 333 */)
-@TopComponent.OpenActionRegistration(
-        displayName = "#CTL_AppLaunchAction",
-        preferredID = "AppLaunchTopComponent"
-)
+//@ActionReference(path = "Menu/Window" /*, position = 333 */)
+//@TopComponent.OpenActionRegistration(
+//        displayName = "#CTL_AppLaunchAction",
+//        preferredID = "AppLaunchTopComponent"
+//)
 @Messages({
     "CTL_AppLaunchAction=AppLaunch",
     "CTL_AppLaunchTopComponent=Application Launch",

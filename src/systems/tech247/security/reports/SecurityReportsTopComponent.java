@@ -5,11 +5,16 @@
  */
 package systems.tech247.security.reports;
 
+import java.awt.BorderLayout;
 import org.netbeans.api.settings.ConvertAsProperties;
 import org.openide.awt.ActionID;
-import org.openide.awt.ActionReference;
+import org.openide.explorer.ExplorerManager;
+import org.openide.explorer.view.BeanTreeView;
+import org.openide.nodes.AbstractNode;
+import org.openide.nodes.Children;
 import org.openide.windows.TopComponent;
 import org.openide.util.NbBundle.Messages;
+import systems.tech247.security.FactorySecurityReports;
 
 /**
  * Top component which displays something.
@@ -25,23 +30,29 @@ import org.openide.util.NbBundle.Messages;
 )
 @TopComponent.Registration(mode = "explorer", openAtStartup = false)
 @ActionID(category = "Window", id = "systems.tech247.security.reports.SecurityReportsTopComponent")
-@ActionReference(path = "Menu/Window" /*, position = 333 */)
-@TopComponent.OpenActionRegistration(
-        displayName = "#CTL_SecurityReportsAction",
-        preferredID = "SecurityReportsTopComponent"
-)
+//@ActionReference(path = "Menu/Window" /*, position = 333 */)
+//@TopComponent.OpenActionRegistration(
+//        displayName = "#CTL_SecurityReportsAction",
+//        preferredID = "SecurityReportsTopComponent"
+//)
 @Messages({
-    "CTL_SecurityReportsAction=SecurityReports",
-    "CTL_SecurityReportsTopComponent=SecurityReports Window",
+    "CTL_SecurityReportsAction=Security Reports",
+    "CTL_SecurityReportsTopComponent=Security Reports",
     "HINT_SecurityReportsTopComponent=This is a SecurityReports window"
 })
-public final class SecurityReportsTopComponent extends TopComponent {
-
+public final class SecurityReportsTopComponent extends TopComponent implements ExplorerManager.Provider {
+    
+    ExplorerManager em = new ExplorerManager();
+    
     public SecurityReportsTopComponent() {
         initComponents();
         setName(Bundle.CTL_SecurityReportsTopComponent());
         setToolTipText(Bundle.HINT_SecurityReportsTopComponent());
         putClientProperty(TopComponent.PROP_CLOSING_DISABLED, Boolean.TRUE);
+        setLayout(new BorderLayout());
+        BeanTreeView btv = new BeanTreeView();
+        add(btv);
+        btv.setRootVisible(false);
 
     }
 
@@ -70,6 +81,7 @@ public final class SecurityReportsTopComponent extends TopComponent {
     @Override
     public void componentOpened() {
         // TODO add custom code on component opening
+        em.setRootContext(new AbstractNode(Children.create(new FactorySecurityReports(), true)));
     }
 
     @Override
@@ -88,4 +100,11 @@ public final class SecurityReportsTopComponent extends TopComponent {
         String version = p.getProperty("version");
         // TODO read your settings according to their version
     }
+
+    @Override
+    public ExplorerManager getExplorerManager() {
+        return em;
+    }
+    
+    
 }

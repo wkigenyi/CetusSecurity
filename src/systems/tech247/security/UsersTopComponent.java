@@ -8,14 +8,19 @@ package systems.tech247.security;
 import java.awt.BorderLayout;
 import org.netbeans.api.settings.ConvertAsProperties;
 import org.openide.awt.ActionID;
-import org.openide.awt.ActionReference;
 import org.openide.explorer.ExplorerManager;
 import org.openide.explorer.ExplorerUtils;
-import org.openide.explorer.view.BeanTreeView;
+import org.openide.explorer.view.OutlineView;
 import org.openide.nodes.AbstractNode;
 import org.openide.nodes.Children;
+import org.openide.util.Lookup;
 import org.openide.windows.TopComponent;
 import org.openide.util.NbBundle.Messages;
+import org.openide.util.lookup.AbstractLookup;
+import org.openide.util.lookup.InstanceContent;
+import org.openide.util.lookup.ProxyLookup;
+import org.openide.windows.WindowManager;
+import systems.tech247.util.CapCreatable;
 
 
 /**
@@ -30,13 +35,13 @@ import org.openide.util.NbBundle.Messages;
         //iconBase="SET/PATH/TO/ICON/HERE", 
         persistenceType = TopComponent.PERSISTENCE_NEVER
 )
-@TopComponent.Registration(mode = "explorer", openAtStartup = false)
+@TopComponent.Registration(mode = "editor", openAtStartup = false)
 @ActionID(category = "Window", id = "systems.tech247.security.UsersTopComponent")
-@ActionReference(path = "Menu/System" , position = 250,separatorAfter=251)
-@TopComponent.OpenActionRegistration(
-        displayName = "#CTL_UsersAction",
-        preferredID = "UsersTopComponent"
-)
+//@ActionReference(path = "Menu/System" , position = 250,separatorAfter=251)
+//@TopComponent.OpenActionRegistration(
+//        displayName = "#CTL_UsersAction",
+//        preferredID = "UsersTopComponent"
+//)
 @Messages({
     "CTL_UsersAction=Users",
     "CTL_UsersTopComponent=Users",
@@ -45,22 +50,39 @@ import org.openide.util.NbBundle.Messages;
 public final class UsersTopComponent extends TopComponent
                                         implements ExplorerManager.Provider{
     ExplorerManager em= new ExplorerManager();
+    InstanceContent content = new InstanceContent();
+    Lookup lkp = new AbstractLookup(content);
     QueryUsers query = new QueryUsers();
+    CapCreatable enableCreate;
     public UsersTopComponent() {
         initComponents();
         setName(Bundle.CTL_UsersTopComponent());
         setToolTipText(Bundle.HINT_UsersTopComponent());
-        putClientProperty(TopComponent.PROP_CLOSING_DISABLED, Boolean.TRUE);
-        viewHolder.setLayout(new BorderLayout());
-        BeanTreeView btv = new BeanTreeView();
+        //putClientProperty(TopComponent.PROP_CLOSING_DISABLED, Boolean.TRUE);
+        enableCreate = new CapCreatable() {
+            @Override
+            public void create() {
+                TopComponent tc = WindowManager.getDefault().findTopComponent("UserEditorTopComponent");
+                tc.open();
+                tc.requestActive();
+            }
+        };
         
-        String sqlString ="SELECT h FROM HrsUsers h";
+        content.add(enableCreate);
+        
+        setLayout(new BorderLayout());
+        OutlineView ov = new OutlineView("Users");
+        add(ov);
+        ov.addPropertyColumn("name", "Full Name");
+        ov.addPropertyColumn("must", "Must Change Password");
+        ov.addPropertyColumn("locked", "Account Locked");
+        ov.addPropertyColumn("lockdate", "Locked Date");
+        
+        String sqlString ="SELECT h FROM HrsUsers h WHERE h.employeeID > 0 ";
         query.setSqlString(sqlString);
-        
-        viewHolder.add(btv,BorderLayout.CENTER);
-        btv.setRootVisible(false);
+        ov.getOutline().setRootVisible(false);
         em.setRootContext(new AbstractNode(Children.create(new ChildFactoryUsers(query, Boolean.FALSE), true)));
-        associateLookup(ExplorerUtils.createLookup(em, getActionMap()));
+        associateLookup(new ProxyLookup(ExplorerUtils.createLookup(em, getActionMap()),lkp));
 
     }
 
@@ -72,59 +94,19 @@ public final class UsersTopComponent extends TopComponent
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        viewHolder = new javax.swing.JPanel();
-        jTextField1 = new javax.swing.JTextField();
-        jLabel1 = new javax.swing.JLabel();
-
-        viewHolder.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-
-        javax.swing.GroupLayout viewHolderLayout = new javax.swing.GroupLayout(viewHolder);
-        viewHolder.setLayout(viewHolderLayout);
-        viewHolderLayout.setHorizontalGroup(
-            viewHolderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-        viewHolderLayout.setVerticalGroup(
-            viewHolderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 245, Short.MAX_VALUE)
-        );
-
-        jTextField1.setBackground(new java.awt.Color(0, 204, 0));
-        jTextField1.setText(org.openide.util.NbBundle.getMessage(UsersTopComponent.class, "UsersTopComponent.jTextField1.text")); // NOI18N
-
-        org.openide.awt.Mnemonics.setLocalizedText(jLabel1, org.openide.util.NbBundle.getMessage(UsersTopComponent.class, "UsersTopComponent.jLabel1.text")); // NOI18N
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(viewHolder, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, 303, Short.MAX_VALUE)))
-                .addContainerGap())
+            .addGap(0, 400, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(9, 9, 9)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(viewHolder, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+            .addGap(0, 300, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JPanel viewHolder;
     // End of variables declaration//GEN-END:variables
     @Override
     public void componentOpened() {

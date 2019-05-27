@@ -6,7 +6,7 @@
             <file name = "SCRGroup.wsgrp" url="groups/SCRGroupWsgroup.xml"/>
             <folder name="SCRGroup">
                 <file name = "SecuritySetupTopComponent.wstcgrp" url="groups/scrgroup/SecuritySetupTopComponentWstcgrp.xml"/>
-                <file name = "UsersTopComponent.wstcgrp" url="groups/scrgroup/UsersTopComponentWstcgrp.xml"/>
+                <!--<file name = "UsersTopComponent.wstcgrp" url="groups/scrgroup/UsersTopComponentWstcgrp.xml"/>-->
                 <file name = "SecurityReportsTopComponent.wstcgrp" url="groups/scrgroup/SecurityReportsTopComponentWstcgrp.xml"/>
             </folder>    
             

@@ -44,11 +44,11 @@ import systems.tech247.util.NodeRefreshProvider;
 )
 @TopComponent.Registration(mode = "editor", openAtStartup = false,roles={"Security"})
 @ActionID(category = "Window", id = "systems.tech247.security.GroupEditorTopComponent")
-@ActionReference(path = "Menu/Window" /*, position = 333 */)
-@TopComponent.OpenActionRegistration(
-        displayName = "#CTL_PolicyEditorAction",
-        preferredID = "PolicyEditorTopComponent"
-)
+//@ActionReference(path = "Menu/Window" /*, position = 333 */)
+//@TopComponent.OpenActionRegistration(
+//        displayName = "#CTL_PolicyEditorAction",
+//        preferredID = "PolicyEditorTopComponent"
+//)
 @NbBundle.Messages({
     "CTL_PolicyEditorAction=Policy Editor",
     "CTL_PolicyEditorTopComponent=Policy Editor",
@@ -218,7 +218,7 @@ public final class PolicyEditorTopComponent extends TopComponent implements Look
                         .addGroup(layout.createSequentialGroup()
                             .addGap(10, 10, 10)
                             .addComponent(jLabel2))))
-                .addContainerGap(19, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

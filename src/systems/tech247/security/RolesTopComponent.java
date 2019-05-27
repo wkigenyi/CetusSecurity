@@ -8,14 +8,20 @@ package systems.tech247.security;
 import java.awt.BorderLayout;
 import org.netbeans.api.settings.ConvertAsProperties;
 import org.openide.awt.ActionID;
-import org.openide.awt.ActionReference;
 import org.openide.explorer.ExplorerManager;
 import org.openide.explorer.ExplorerUtils;
-import org.openide.explorer.view.BeanTreeView;
+import org.openide.explorer.view.OutlineView;
 import org.openide.nodes.AbstractNode;
 import org.openide.nodes.Children;
+import org.openide.util.Lookup;
 import org.openide.windows.TopComponent;
 import org.openide.util.NbBundle.Messages;
+import org.openide.util.lookup.AbstractLookup;
+import org.openide.util.lookup.InstanceContent;
+import org.openide.util.lookup.ProxyLookup;
+import org.openide.windows.WindowManager;
+import systems.tech247.securitypannels.GroupEditorTopComponent;
+import systems.tech247.util.CapCreatable;
 
 
 /**
@@ -32,11 +38,11 @@ import org.openide.util.NbBundle.Messages;
 )
 @TopComponent.Registration(mode = "editor", openAtStartup = false)
 @ActionID(category = "Window", id = "systems.tech247.security.RolesTopComponent")
-@ActionReference(path = "Menu/System" , position = 250,separatorAfter=251)
-@TopComponent.OpenActionRegistration(
-        displayName = "#CTL_RolesAction",
-        preferredID = "RolesTopComponent"
-)
+//@ActionReference(path = "Menu/System" , position = 250,separatorAfter=251)
+//@TopComponent.OpenActionRegistration(
+//        displayName = "#CTL_RolesAction",
+//        preferredID = "RolesTopComponent"
+//)
 @Messages({
     "CTL_RolesAction=Roles (User Groups)",
     "CTL_RolesTopComponent=Roles (User Groups)",
@@ -46,20 +52,35 @@ public final class RolesTopComponent extends TopComponent
                                         implements ExplorerManager.Provider{
     ExplorerManager em= new ExplorerManager();
     QueryUserGroups query = new QueryUserGroups();
+    InstanceContent content = new InstanceContent();
+    Lookup lkp = new AbstractLookup(content);
+    CapCreatable enableCreate;
     public RolesTopComponent() {
         initComponents();
         setName(Bundle.CTL_RolesTopComponent());
         setToolTipText(Bundle.HINT_RolesTopComponent());
+        
+        enableCreate = new CapCreatable() {
+            @Override
+            public void create() {
+                TopComponent tc = new GroupEditorTopComponent();
+                tc.open();
+                tc.requestActive();
+            }
+        };
+        
+        content.add(enableCreate);
+        
         setLayout(new BorderLayout());
-        BeanTreeView btv = new BeanTreeView();
+        OutlineView btv = new OutlineView("Roles");
         
         String sqlString ="SELECT h FROM HrsGroups h";
         query.setSqlString(sqlString);
         
         add(btv,BorderLayout.CENTER);
-        btv.setRootVisible(false);
+        btv.getOutline().setRootVisible(false);
         em.setRootContext(new AbstractNode(Children.create(new ChildFactoryUserGroups(query,Boolean.FALSE), true)));
-        associateLookup(ExplorerUtils.createLookup(em, getActionMap()));
+        associateLookup(new ProxyLookup(ExplorerUtils.createLookup(em, getActionMap()),lkp));
 
     }
 

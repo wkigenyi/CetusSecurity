@@ -12,6 +12,7 @@ import org.openide.util.Lookup;
 import org.openide.util.LookupEvent;
 import org.openide.util.LookupListener;
 import org.openide.windows.TopComponentGroup;
+import org.openide.windows.WindowManager;
 import systems.tech247.dbaccess.DataAccess;
 import systems.tech247.hr.HrsGroupPolicies;
 import systems.tech247.hr.HrsGroups;
@@ -35,9 +36,9 @@ public class Installer extends ModuleInstall implements LookupListener{
     public void restored() {
         System.setProperty("netbeans.buildnumber", "0.1");
         
-        /*WindowManager.getDefault().invokeWhenUIReady(new Runnable() {
+        WindowManager.getDefault().invokeWhenUIReady(new Runnable() {
             @Override
-            public void run() {*/
+            public void run() {
                 LoginDetail detail = UtilitySecurity.getInstance().getLoginDetail();
                 DataAccess.saveLogin(detail.getUser().getUserID(), detail.getWorkstation());
                 
@@ -48,12 +49,16 @@ public class Installer extends ModuleInstall implements LookupListener{
                         CetusUTL.userRights.add(p.getPolicyID().getPolicyID());
                     }
                 }
-            /*}
-        });*/
-        
-        
-        
+            }
+                });
     }
+                
+            
+        
+        
+        
+        
+    
 
 
 

@@ -24,7 +24,7 @@ import systems.tech247.util.NotifyUtil;
  * Top component which displays something.
  */
 @ConvertAsProperties(
-        dtd = "-//systems.tech247.security//SecurityOptions//EN",
+        dtd = "-//systems.tech247.menus//SecurityOptions//EN",
         autostore = false
 )
 @TopComponent.Description(
@@ -33,12 +33,12 @@ import systems.tech247.util.NotifyUtil;
         persistenceType = TopComponent.PERSISTENCE_NEVER
 )
 @TopComponent.Registration(mode = "editor", openAtStartup = false,roles={"Security"})
-@ActionID(category = "Window", id = "systems.tech247.security.SecurityOptionsTopComponent")
-@ActionReference(path = "Menu/Window" /*, position = 333 */)
-@TopComponent.OpenActionRegistration(
-        displayName = "#CTL_SecurityOptionsAction",
-        preferredID = "SecurityOptionsTopComponent"
-)
+@ActionID(category = "Window", id = "systems.tech247.menus.SecurityOptionsTopComponent")
+//@ActionReference(path = "Menu/Window" /*, position = 333 */)
+//@TopComponent.OpenActionRegistration(
+//        displayName = "#CTL_SecurityOptionsAction",
+//        preferredID = "SecurityOptionsTopComponent"
+//)
 @Messages({
     "CTL_SecurityOptionsAction=Security Options",
     "CTL_SecurityOptionsTopComponent=Security Options",

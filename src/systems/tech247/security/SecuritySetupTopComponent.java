@@ -32,11 +32,11 @@ import systems.tech247.hr.HrsGroups;
 )
 @TopComponent.Registration(mode = "explorer", openAtStartup = false/*,roles={"Security"}*/)
 @ActionID(category = "Window", id = "systems.tech247.security.SecuritySetupTopComponent")
-@ActionReference(path = "Menu/Window" /*, position = 333 */)
-@TopComponent.OpenActionRegistration(
-        displayName = "#CTL_SecuritySetupAction",
-        preferredID = "SecuritySetupTopComponent"
-)
+//@ActionReference(path = "Menu/Window" /*, position = 333 */)
+//@TopComponent.OpenActionRegistration(
+//        displayName = "#CTL_SecuritySetupAction",
+//        preferredID = "SecuritySetupTopComponent"
+//)
 @Messages({
     "CTL_SecuritySetupAction=Security Setup",
     "CTL_SecuritySetupTopComponent=Security Setup",

@@ -45,6 +45,13 @@ class Bundle {
         return org.openide.util.NbBundle.getMessage(Bundle.class, "CTL_AppModulesTopComponent");
     }
     /**
+     * @return <i>Change Password</i>
+     * @see ChangePassword
+     */
+    static String CTL_ChangePassword() {
+        return org.openide.util.NbBundle.getMessage(Bundle.class, "CTL_ChangePassword");
+    }
+    /**
      * @return <i>Security Options</i>
      * @see SecurityOptionsTopComponent
      */

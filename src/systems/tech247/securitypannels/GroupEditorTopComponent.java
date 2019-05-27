@@ -26,7 +26,7 @@ import systems.tech247.util.NodeRefreshProvider;
 
 
 @ConvertAsProperties(
-        dtd = "-//systems.tech247.security//GroupEditor//EN",
+        dtd = "-//systems.tech247.securitypannels//GroupEditor//EN",
         autostore = false
 )
 @TopComponent.Description(
@@ -35,12 +35,12 @@ import systems.tech247.util.NodeRefreshProvider;
         persistenceType = TopComponent.PERSISTENCE_NEVER
 )
 @TopComponent.Registration(mode = "editor", openAtStartup = false,roles={"Security"})
-@ActionID(category = "Window", id = "systems.tech247.security.GroupEditorTopComponent")
-@ActionReference(path = "Menu/Window" /*, position = 333 */)
-@TopComponent.OpenActionRegistration(
-        displayName = "#CTL_GroupEditorAction",
-        preferredID = "GroupEditorTopComponent"
-)
+@ActionID(category = "Window", id = "systems.tech247.securitypannels.GroupEditorTopComponent")
+//@ActionReference(path = "Menu/Window" /*, position = 333 */)
+//@TopComponent.OpenActionRegistration(
+//        displayName = "#CTL_GroupEditorAction",
+//        preferredID = "GroupEditorTopComponent"
+//)
 @NbBundle.Messages({
     "CTL_GroupEditorAction=Group Editor",
     "CTL_GroupEditorTopComponent=Group Editor",

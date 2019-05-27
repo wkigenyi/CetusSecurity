@@ -50,11 +50,11 @@ import systems.tech247.util.NotifyUtil;
 )
 @TopComponent.Registration(mode = "editor", openAtStartup = false)
 @ActionID(category = "Window", id = "systems.tech247.securitypannels.UserEditorTopComponent")
-@ActionReference(path = "Menu/Window" /*, position = 333 */)
-@TopComponent.OpenActionRegistration(
-        displayName = "#CTL_UserEditorAction",
-        preferredID = "UserEditorTopComponent"
-)
+//@ActionReference(path = "Menu/Window" /*, position = 333 */)
+//@TopComponent.OpenActionRegistration(
+//        displayName = "#CTL_UserEditorAction",
+//        preferredID = "UserEditorTopComponent"
+//)
 @Messages({
     "CTL_UserEditorAction=User Editor",
     "CTL_UserEditorTopComponent=User Editor",

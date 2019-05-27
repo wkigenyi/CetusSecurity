@@ -32,18 +32,9 @@ public class FactorySecurityReports extends ChildFactory<SetupItem> {
     
     
     
-    List policies = new ArrayList<>();
+    
     public FactorySecurityReports(){
         
-        
-        HrsGroups group = UtilitySecurity.getInstance().getLoginDetail().getUser().getGroupID();
-        
-        
-        for(HrsGroupPolicies p:group.getHrsGroupPoliciesCollection()){
-            if(p.getPolModify()){
-                policies.add(p.getPolicyID().getPolicyID());
-            }
-        }
     }
 
 
@@ -56,76 +47,10 @@ public class FactorySecurityReports extends ChildFactory<SetupItem> {
                 toPopulate.add(new SetupItem("Audit Trail",new AbstractAction() {
                     @Override
                     public void actionPerformed(ActionEvent e) {
-                        TopComponent tc = WindowManager.getDefault().findTopComponent("SecurityOptionsTopComponent");
-                        tc.open();
-                        tc.requestActive();
+                        // TODO: Prepare the Audit Trail Report
                     }
                 }));
-        
-        
-        
-                InstanceContent icp = new InstanceContent();
-                icp.add(new CapCreatable() {
-                    @Override
-                    public void create() {
-                        TopComponent tc = new UserEditorTopComponent();
-                        tc.open();
-                        tc.requestActive();
-                    }
-                });
-        QueryUsers query= new QueryUsers();
-        query.setSqlString("SELECT h FROM HrsUsers h");
-        if(policies.contains(4)) //Viewing Users
-            toPopulate.add(new SetupItem("Registered Users",Children.create(new ChildFactoryUsers(query,true), true),icp));
-        InstanceContent icpG = new InstanceContent();
-                icp.add(new CapCreatable() {
-                    @Override
-                    public void create() {
-                        TopComponent tc = new GroupEditorTopComponent();
-                        tc.open();
-                        tc.requestActive();
-                    }
-                });
-        QueryUserGroups queryg= new QueryUserGroups();
-        queryg.setSqlString("SELECT h FROM HrsGroups h");
-        if(policies.contains(3))
-            toPopulate.add(new SetupItem("User Groups",Children.create(new ChildFactoryUserGroups(queryg,true), true) ,icpG));
-        toPopulate.add(new SetupItem("Group Rights Assignment",new AbstractAction() {
-                    @Override
-                    public void actionPerformed(ActionEvent e) {
-                        TopComponent tc = WindowManager.getDefault().findTopComponent("AppModulesTopComponent");
-                        tc.open();
-                        tc.requestActive();
-                    }
-                }));
-        toPopulate.add(new SetupItem("Rights Matrix",new AbstractAction() {
-                    @Override
-                    public void actionPerformed(ActionEvent e) {
-                        TopComponent tc = WindowManager.getDefault().findTopComponent("SecurityOptionsTopComponent");
-                        tc.open();
-                        tc.requestActive();
-                    }
-                }));
-                toPopulate.add(new SetupItem("Database Server Settings",new AbstractAction() {
-                    @Override
-                    public void actionPerformed(ActionEvent e) {
-                        TopComponent tc = WindowManager.getDefault().findTopComponent("SecurityOptionsTopComponent");
-                        tc.open();
-                        tc.requestActive();
-                    }
-                }));
-        //toPopulate.add(new SetupItem("Payrolls",Children.create(new FactoryPayroll(Boolean.TRUE), true)));
-        //toPopulate.add(new SetupItem("Statutory Rates Setup",Children.create(new FactoryStatutoryRatesSetup(), true)));
-        //toPopulate.add(new SetupItem("Match Departments TO SUN"));
-        /*toPopulate.add(new SetupItem("Salary Calculator",new AbstractAction() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                TopComponent salaryTc = WindowManager.getDefault().findTopComponent("SalaryCalculatorTopComponent");
-                salaryTc.open();
-            }
-        }));*/
-        
-        
+     
         return true;
     }
     

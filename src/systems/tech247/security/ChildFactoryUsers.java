@@ -44,14 +44,14 @@ public class ChildFactoryUsers extends ChildFactory<Object> implements LookupLis
     protected boolean createKeys(List<Object> toPopulate) {
         
         
-        toPopulate.add(new AddTool(new AbstractAction() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                TopComponent tc = new UserEditorTopComponent();
-                tc.open();
-                tc.requestActive();
-            }
-        }));
+//        toPopulate.add(new AddTool(new AbstractAction() {
+//            @Override
+//            public void actionPerformed(ActionEvent e) {
+//                TopComponent tc = new UserEditorTopComponent();
+//                tc.open();
+//                tc.requestActive();
+//            }
+//        }));
         
         //get this ability from the look
         ReloadableQueryCapability r = query.getLookup().lookup(ReloadableQueryCapability.class);

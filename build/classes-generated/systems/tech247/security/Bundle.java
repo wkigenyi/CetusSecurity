@@ -17,13 +17,6 @@ class Bundle {
         return org.openide.util.NbBundle.getMessage(Bundle.class, "CTL_RolesTopComponent");
     }
     /**
-     * @return <i>Security</i>
-     * @see SecurityTopComponent
-     */
-    static String CTL_SecurityAction() {
-        return org.openide.util.NbBundle.getMessage(Bundle.class, "CTL_SecurityAction");
-    }
-    /**
      * @return <i>SecurityDashBoard</i>
      * @see SecurityDashBoardTopComponent
      */
@@ -50,13 +43,6 @@ class Bundle {
      */
     static String CTL_SecuritySetupTopComponent() {
         return org.openide.util.NbBundle.getMessage(Bundle.class, "CTL_SecuritySetupTopComponent");
-    }
-    /**
-     * @return <i>Security</i>
-     * @see SecurityTopComponent
-     */
-    static String CTL_SecurityTopComponent() {
-        return org.openide.util.NbBundle.getMessage(Bundle.class, "CTL_SecurityTopComponent");
     }
     /**
      * @return <i>Users</i>
@@ -92,13 +78,6 @@ class Bundle {
      */
     static String HINT_SecuritySetupTopComponent() {
         return org.openide.util.NbBundle.getMessage(Bundle.class, "HINT_SecuritySetupTopComponent");
-    }
-    /**
-     * @return <i> </i>
-     * @see SecurityTopComponent
-     */
-    static String HINT_SecurityTopComponent() {
-        return org.openide.util.NbBundle.getMessage(Bundle.class, "HINT_SecurityTopComponent");
     }
     /**
      * @return 
